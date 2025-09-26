@@ -769,24 +769,15 @@
                         <div class="contact-form-wrapper">
                             <div class="introduce">
                         <!-- Scripts -->
-                        
- 
-
-<!-- References for the optional jQuery function to enhance end-user prompts -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="form.js"></script>		
- 
-<!-- In the second section we will have our contact form -->
+                        <!-- In the second section we will have our contact form -->
 	  
-<form method="POST" id="form">Name
+     <form method="POST" id="form">Name
       
     <input type="hidden" name="access_key" value="e4fb776d-e6d3-436b-873f-d74e87cd5d26">
 
     <input type="text" name="name" required>Email
     <input type="email" name="email" required>Text
 	<textarea name="message" required></textarea>
-	<input type="checkbox" id="terms">
-    <label for="terms"><span> I agree to the processing of my personal data.</span></label>
 	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 	</div>
     <!-- Submit Button -->
@@ -892,6 +883,8 @@ form.addEventListener('submit', function(e) {
     <script src="assets/js/jquery-one-page-nav.js"></script>
     <!-- main JS -->
     <script src="assets/js/main.js"></script>
+	<!-- References for the optional jQuery function form to enhance end-user prompts -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <?--[if gte IE 5[><script type="text/javascript">
     createPopup().show(0,0,0,0,0);
     </script><![endif]-->
