@@ -794,21 +794,72 @@
         </div>
     </div>
 </div>	
-<script>
-// Disable form submissions if there are invalid fields
+ <script>
 (function() {
   'use strict';
+
+  // Settings
+  const RATE_LIMIT_WINDOW = 60; //seconds (for example, 1 sending per minute)
+  const FORM_STORAGE_KEY = 'form_submission_timestamp';
+
+  // Examination User-Agent
+  function hasUserAgent() {
+    return typeof navigator !== 'undefined' &&
+           typeof navigator.userAgent === 'string' &&
+           navigator.userAgent.trim() !== '';
+  }
+
+  // Checking the local time limit
+  function isRateLimited() {
+    const lastSubmit = localStorage.getItem(FORM_STORAGE_KEY);
+    if (!lastSubmit) return false;
+
+    const now = Date.now();
+    const lastSubmitTime = parseInt(lastSubmit, 10);
+    return (now - lastSubmitTime) < RATE_LIMIT_WINDOW * 1000;
+  }
+
+  // Save sending time
+  function setLastSubmission() {
+    localStorage.setItem(FORM_STORAGE_KEY, Date.now().toString());
+  }
+
   window.addEventListener('load', function() {
-    // Get the forms we want to add validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
+    // Block if not User-Agent
+    if (!hasUserAgent()) {
+      console.warn('Form submission blocked: missing User-Agent.');
+      return;
+    }
+
+    const forms = document.getElementsByClassName('needs-validation');
+    Array.from(forms).forEach(function(form) {
       form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
+        // 1. Checking local rate limit
+        if (isRateLimited()) {
           event.preventDefault();
           event.stopPropagation();
+          alert(`The form can be submitted no more than once per ${RATE_LIMIT_WINDOW} seconds.`);
+          return;
         }
+
+        // 2. Form validation
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+          form.classList.add('was-validated');
+          return;
+        }
+
+        // 3. Validation successful → sending allowed
         form.classList.add('was-validated');
+        setLastSubmission(); // Remember the sending time
+
+        // Optional: block the button
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sent...';
+        }
       }, false);
     });
   }, false);
