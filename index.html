@@ -808,7 +808,7 @@
     'test', 'тест', 'qwe', 'qwerty', '123', '1234', '12345', '123456', '1111',
     'asdf', 'zxcv', 'йцу', 'фыв', 'йцукен', 'no name', 'noname', 'anonymous',
     'spam', 'бот', 'bot', 'example', 'user', 'имя', 'ваше имя', 'сообщение',
-    'name', 'message', 'email', 'none', 'null', 'undefined'
+    'name', 'message', 'email', 'none', 'null', 'undefined', `aaaaaa`
   ].map(s => s.toLowerCase());
 
   // === Вспомогательные функции ===
@@ -857,7 +857,7 @@
 
   window.addEventListener('load', function() {
     if (!hasUserAgent()) {
-      console.warn('Форма заблокирована: отсутствует User-Agent.');
+      console.warn('Form blocked: missing user agent.');
       return;
     }
 
@@ -865,7 +865,7 @@
     const result = document.getElementById('result');
 
     if (!form || !result) {
-      console.error('Форма с id="form" или элемент #result не найдены.');
+      console.error('Form с id="form" or element #result not found.');
       return;
     }
 
@@ -878,7 +878,7 @@
       if (!input) return true;
       const isBad = isMeaningless(input.value, type);
       input.setCustomValidity(isBad ? 
-        (type === 'name' ? 'Пожалуйста, введите настоящее имя.' : 'Пожалуйста, напишите осмысленное сообщение.') 
+        (type === 'name' ? 'Please enter your real name.' : 'Please write a meaningful message..') 
         : ''
       );
       return !isBad;
@@ -894,7 +894,7 @@
 
       // 1. Rate limiting
       if (isRateLimited()) {
-        alert(`Пожалуйста, подождите ${RATE_LIMIT_WINDOW} секунд перед повторной отправкой.`);
+        alert(`Please wait ${RATE_LIMIT_WINDOW} seconds before resending.`);
         return;
       }
 
@@ -905,11 +905,11 @@
       // 3. Проверка содержимого
       let valid = true;
       if (nameInput && isMeaningless(nameInput.value, 'name')) {
-        nameInput.setCustomValidity('Пожалуйста, введите настоящее имя (минимум 2 символа, с буквами).');
+        nameInput.setCustomValidity('Please enter your real name (minimum 2 characters, including letters)).');
         valid = false;
       }
       if (messageInput && isMeaningless(messageInput.value, 'message')) {
-        messageInput.setCustomValidity('Пожалуйста, напишите осмысленное сообщение.');
+        messageInput.setCustomValidity('Please write a meaningful message.');
         valid = false;
       }
 
@@ -923,9 +923,9 @@
       if (submitBtn) {
         submitBtn.disabled = true;
         const span = submitBtn.querySelector('span');
-        if (span) span.textContent = 'Отправляется...';
+        if (span) span.textContent = 'Departing...';
       }
-      result.innerHTML = 'Пожалуйста, подождите...';
+      result.innerHTML = 'Please wait...';
       result.style.display = 'block';
 
       // 6. Отправка на Web3Forms
@@ -944,7 +944,7 @@
         });
 
         const data = await response.json();
-        result.innerHTML = data.message || (response.ok ? 'Сообщение отправлено!' : 'Ошибка отправки.');
+        result.innerHTML = data.message || (response.ok ? 'Message sent!' : 'Sending error.');
 
         if (response.ok) {
           form.reset();
@@ -953,7 +953,7 @@
         }
       } catch (error) {
         console.error('Ошибка:', error);
-        result.innerHTML = 'Что-то пошло не так!';
+        result.innerHTML = 'Something went wrong!';
       } finally {
         // Восстановить кнопку через 1 секунду, если нужно
         setTimeout(() => {
