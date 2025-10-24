@@ -799,8 +799,15 @@
   'use strict';
 
   // Settings
-  const RATE_LIMIT_WINDOW = 60; //seconds (for example, 1 sending per minute)
+  const RATE_LIMIT_WINDOW = 60; // seconds
   const FORM_STORAGE_KEY = 'form_submission_timestamp';
+
+  // List of prohibited "fillers"
+  const BANNED_PHRASES = [
+    'test', 'тест', 'qwe', 'qwerty', '123', '1234', '12345', '123456',
+    'asdf', 'zxcv', 'йцу', 'фыв', 'йцукен', 'no name', 'noname', 'anonymous',
+    'spam', 'бот', 'bot', 'example', 'user', 'имя', 'ваше имя', 'сообщение'
+  ].map(s => s.toLowerCase());
 
   // Examination User-Agent
   function hasUserAgent() {
@@ -809,23 +816,76 @@
            navigator.userAgent.trim() !== '';
   }
 
-  // Checking the local time limit
+  //Check for duplicate characters (eg: aaaaa, 11111)
+  function isRepetitive(str) {
+    if (str.length < 3) return false;
+    const firstChar = str[0];
+    return str.split('').every(char => char === firstChar);
+  }
+
+  // Check for only numbers/special characters (no letters)
+  function hasNoLetters(str) {
+    return !/[a-zA-Zа-яА-ЯёЁ]/.test(str);
+  }
+
+  // Testing for "meaninglessness"
+  function isMeaningless(value, fieldType = 'text') {
+    const clean = value.trim();
+    if (clean.length === 0) return true;
+    if (clean.length < 2) return true;
+
+    const lower = clean.toLowerCase();
+
+    // Checking for prohibited phrases
+    if (BANNED_PHRASES.some(phrase => lower.includes(phrase))) {
+      return true;
+    }
+
+    // Repeating characters
+    if (isRepetitive(clean)) {
+      return true;
+    }
+
+    // Only numbers/special characters (critical for names; less critical for text, but still suspicious)
+    if (fieldType === 'name' && hasNoLetters(clean)) {
+      return true;
+    }
+
+    // For text: if the text is long (>20 characters) and there are no spaces, it is suspicious
+    if (fieldType === 'message' && clean.length > 20 && !clean.includes(' ')) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Local rate limiting
   function isRateLimited() {
     const lastSubmit = localStorage.getItem(FORM_STORAGE_KEY);
     if (!lastSubmit) return false;
-
     const now = Date.now();
     const lastSubmitTime = parseInt(lastSubmit, 10);
     return (now - lastSubmitTime) < RATE_LIMIT_WINDOW * 1000;
   }
 
-  // Save sending time
   function setLastSubmission() {
     localStorage.setItem(FORM_STORAGE_KEY, Date.now().toString());
   }
 
+  // Validating a specific field
+  function validateField(input, fieldType) {
+    if (!input) return true; // If the field is not found, skip it.
+    const value = input.value;
+    if (isMeaningless(value, fieldType)) {
+      input.setCustomValidity('Please enter meaningful text..');
+      return false;
+    } else {
+      input.setCustomValidity(''); // error reset
+      return true;
+    }
+  }
+
   window.addEventListener('load', function() {
-    // Block if not User-Agent
     if (!hasUserAgent()) {
       console.warn('Form submission blocked: missing User-Agent.');
       return;
@@ -833,34 +893,56 @@
 
     const forms = document.getElementsByClassName('needs-validation');
     Array.from(forms).forEach(function(form) {
+      // Find fields by name or id (adapt to your markup)
+      const nameInput = form.querySelector('input[name="name"], input[id="name"], input[placeholder*="Имя" i]');
+      const messageInput = form.querySelector('textarea[name="message"], textarea[id="message"], textarea[placeholder*="сообщение" i]');
+
+      // Validation on submission
       form.addEventListener('submit', function(event) {
-        // 1. Checking local rate limit
         if (isRateLimited()) {
           event.preventDefault();
           event.stopPropagation();
-          alert(`The form can be submitted no more than once per ${RATE_LIMIT_WINDOW} seconds.`);
+          alert(`The form can be submitted no more than once per${RATE_LIMIT_WINDOW} seсondы.`);
           return;
         }
-	 
-        // 2. Form validation
-        if (!form.checkValidity()) {
+
+        // Resetting errors
+        if (nameInput) nameInput.setCustomValidity('');
+        if (messageInput) messageInput.setCustomValidity('');
+
+        // Field check
+        let isNameValid = true;
+        let isMessageValid = true;
+
+        if (nameInput) isNameValid = validateField(nameInput, 'name');
+        if (messageInput) isMessageValid = validateField(messageInput, 'message');
+
+        // Standard browser validation
+        if (!form.checkValidity() || !isNameValid || !isMessageValid) {
           event.preventDefault();
           event.stopPropagation();
           form.classList.add('was-validated');
           return;
         }
 
-        // 3. Validation successful → sending allowed
+        // Successful sending
         form.classList.add('was-validated');
-        setLastSubmission(); // Remember the sending time
+        setLastSubmission();
 
-        // Optional: block the button
         const submitBtn = form.querySelector('button[type="submit"]');
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.textContent = 'Sent...';
         }
       }, false);
+
+      // Optional: Real-time validation (on loss of focus)
+      if (nameInput) {
+        nameInput.addEventListener('blur', () => validateField(nameInput, 'name'));
+      }
+      if (messageInput) {
+        messageInput.addEventListener('blur', () => validateField(messageInput, 'message'));
+      }
     });
   }, false);
 })();
