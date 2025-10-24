@@ -779,13 +779,12 @@
     <input type="email" name="email" required>Text
 	<textarea name="message" required></textarea>
 	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-		 </div>
-		 <div class="checkbox">
-						 
-							<input type="checkbox"> I caccept the Terms of Use & Privacy Policy.
-							<span class="checkmark"></span>
-						 
-					</div>
+		<div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="gdprConsent" required>
+                <label class="custom-control-label" for="gdprConsent">
+                  Я согласен с <a href="/privacy-policy" target="_blank">I caccept the Terms of Use</a> & Privacy Policy
+                </label>
+			</div>
     <!-- Submit Button -->
     <button name="submit" type="submit" id="submit" class="rn-btn">
                                 <span>SEND MESSAGE</span>
