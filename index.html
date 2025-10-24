@@ -799,11 +799,11 @@
   'use strict';
 
   // === Настройки ===
-  const RATE_LIMIT_WINDOW = 60; // секунд между отправками
+  const RATE_LIMIT_WINDOW = 60; // seconds between sendings
   const FORM_STORAGE_KEY = 'contact_form_last_submit';
   const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
-  // Список бессмысленных фраз
+  // List of meaningless phrases
   const BANNED_PHRASES = [
     'test', 'тест', 'qwe', 'qwerty', '123', '1234', '12345', '123456', '1111',
     'asdf', 'zxcv', 'йцу', 'фыв', 'йцукен', 'no name', 'noname', 'anonymous',
@@ -811,7 +811,7 @@
     'name', 'message', 'email', 'none', 'null', 'undefined', `aaaaaa`
   ].map(s => s.toLowerCase());
 
-  // === Вспомогательные функции ===
+  // === Auxiliary functions ===
 
   function hasUserAgent() {
     return typeof navigator !== 'undefined' &&
@@ -853,7 +853,7 @@
     localStorage.setItem(FORM_STORAGE_KEY, Date.now().toString());
   }
 
-  // === Основная инициализация ===
+  // === Basic initialization ===
 
   window.addEventListener('load', function() {
     if (!hasUserAgent()) {
@@ -873,7 +873,7 @@
     const messageInput = form.querySelector('textarea[name="message"]');
     const submitBtn = form.querySelector('button[type="submit"]');
 
-    // Валидация поля при потере фокуса
+    // Field validation on loss of focus
     const validateField = (input, type) => {
       if (!input) return true;
       const isBad = isMeaningless(input.value, type);
@@ -887,7 +887,7 @@
     if (nameInput) nameInput.addEventListener('blur', () => validateField(nameInput, 'name'));
     if (messageInput) messageInput.addEventListener('blur', () => validateField(messageInput, 'message'));
 
-    // Обработка отправки
+    // Processing the shipment
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       e.stopPropagation();
@@ -898,11 +898,11 @@
         return;
       }
 
-      // 2. Сброс ошибок
+      // 2. Resetting errors
       if (nameInput) nameInput.setCustomValidity('');
       if (messageInput) messageInput.setCustomValidity('');
 
-      // 3. Проверка содержимого
+      // 3. Content Check
       let valid = true;
       if (nameInput && isMeaningless(nameInput.value, 'name')) {
         nameInput.setCustomValidity('Please enter your real name (minimum 2 characters, including letters)).');
@@ -913,13 +913,13 @@
         valid = false;
       }
 
-      // 4. Стандартная валидация браузера
+      // 4. Standard browser validation
       if (!form.checkValidity() || !valid) {
         form.classList.add('was-validated');
         return;
       }
 
-      // 5. Блокировка кнопки и подготовка к отправке
+      // 5. Locking the button and preparing for shipment
       if (submitBtn) {
         submitBtn.disabled = true;
         const span = submitBtn.querySelector('span');
@@ -928,7 +928,7 @@
       result.innerHTML = 'Please wait...';
       result.style.display = 'block';
 
-      // 6. Отправка на Web3Forms
+      // 6. Sending  
       const formData = new FormData(form);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
@@ -955,14 +955,14 @@
         console.error('Ошибка:', error);
         result.innerHTML = 'Something went wrong!';
       } finally {
-        // Восстановить кнопку через 1 секунду, если нужно
+        // Restore button after 1 second if needed
         setTimeout(() => {
           if (submitBtn) {
             submitBtn.disabled = false;
             const span = submitBtn.querySelector('span');
             if (span) span.textContent = 'SEND MESSAGE';
           }
-          // Скрыть результат через 3 секунды
+          // Hide the result after 3 seconds
           setTimeout(() => {
             result.style.display = 'none';
           }, 3000);
