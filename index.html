@@ -922,7 +922,14 @@
         messageInput.setCustomValidity('Please write a meaningful message.');
         valid = false;
       }
-
+        // Дополнительно можно добавить проверку на стороне JavaScript
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const honeypot = document.getElementById('honeypot').value;
+            if (honeypot) {
+                // Если поле не пустое, скорее всего, это бот
+                alert("Вы бот!");
+                event.preventDefault(); // Останавливаем отправку формы
+            }
       // 4. Standard browser validation
       if (!form.checkValidity() || !valid) {
         form.classList.add('was-validated');
