@@ -779,10 +779,6 @@
 	<textarea name="message" required></textarea>
 	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 	</div>
-	<div class="form-group form-check">
-		<input type="checkbox" class="form-check-input" id="exampleCheck">
-		<label class="form-check-label" for="exampleCheck">Check me out</label>
-	</div>
     <!-- Submit Button -->
     <button name="submit" type="submit" id="submit" class="rn-btn">
                                 <span>SEND MESSAGE</span>
@@ -845,7 +841,11 @@
           alert(`The form can be submitted no more than once per ${RATE_LIMIT_WINDOW} seconds.`);
           return;
         }
-
+		  
+       // Modern, practical regex (RFC 5322 compliant enough for web forms)
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        return emailRegex.test(trimmedEmail);
+       }
         // 2. Form validation
         if (!form.checkValidity()) {
           event.preventDefault();
