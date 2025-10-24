@@ -925,20 +925,7 @@
         form.classList.add('was-validated');
         return;
       }
-      // Проверка, что чекбокс с согласием GDPR отмечен
-      if ($('#gdprConsent').prop('checked')) {
-        // Если форма валидна и GDPR согласие есть
-        $('#success-msg').fadeIn(); // Показываем сообщение об успешной регистрации
-        $('#registrationForm')[0].reset(); // Очищаем форму
-        $('#already-submitted-msg').hide(); // Скрываем сообщение об отправке
-        // Закрываем модальное окно через 2 секунды
-        setTimeout(function() {
-          $('#exampleModal').modal('hide');
-        }, 2000);
-      } else {
-        // Если согласие не отмечено, показываем ошибку
-        alert('Please confirm your agreement with the privacy policy.');
-      }
+     
       // 5. Locking the button and preparing for shipment
       if (submitBtn) {
         submitBtn.disabled = true;
