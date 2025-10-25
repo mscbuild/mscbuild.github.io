@@ -681,68 +681,40 @@
         <!-- End portfolio Area -->
 
 	    <!-- Modal Hire me Start -->
-	<!-- Hire Me Link (Place this anywhere on your page) -->
-<a href="#" id="hireMeLink" class="hire-me-link">Hire Me</a>
-
-<!-- Modal Structure (Same as before but with minor ID adjustments) -->
-<div class="modal-overlay" id="hireModal">
+  <div class="modal-overlay" id="hireModal">
   <div class="modal-container">
-    <!-- Modal Header -->
     <div class="modal-header">
       <h2>Hire <span class="freelancer-name">{freelancer's username}</span></h2>
       <button class="close-btn" aria-label="Close modal">&times;</button>
     </div>
 
-    <!-- Modal Body -->
     <div class="modal-body">
-      <!-- Project Title Section -->
+      <!-- Project Title -->
       <div class="form-section">
         <label for="project-title">Project Title</label>
-        <input 
-          type="text" 
-          id="project-title" 
-          placeholder="Enter project title"
-          class="form-input"
-        >
+        <input type="text" id="project-title" placeholder="Enter project title" class="form-input">
       </div>
 
-      <!-- Private Message Section -->
+      <!-- Private Message -->
       <div class="form-section">
         <label for="private-message">Private Message</label>
-        <textarea 
-          id="private-message" 
-          rows="4" 
-          placeholder="Write a personalized message to the freelancer..."
-          class="form-input"
-        ></textarea>
+        <textarea id="private-message" rows="4" placeholder="Write a personalized message..." class="form-input"></textarea>
         <p class="helper-text">This message will be sent with your invitation</p>
       </div>
 
-      <!-- Payment Type Section -->
+      <!-- Project Type -->
       <div class="form-section">
         <label>Project Type</label>
         <div class="payment-type-selector">
           <div class="payment-option">
-            <input 
-              type="radio" 
-              id="fixed-price" 
-              name="payment-type" 
-              value="fixed"
-              checked
-            >
+            <input type="radio" id="fixed-price" name="payment-type" value="fixed" checked>
             <label for="fixed-price" class="payment-label">
               <span class="payment-title">Fixed-Price</span>
               <span class="payment-desc">Set a total project budget</span>
             </label>
           </div>
-          
           <div class="payment-option">
-            <input 
-              type="radio" 
-              id="hourly" 
-              name="payment-type" 
-              value="hourly"
-            >
+            <input type="radio" id="hourly" name="payment-type" value="hourly">
             <label for="hourly" class="payment-label">
               <span class="payment-title">Hourly</span>
               <span class="payment-desc">Set an hourly rate</span>
@@ -751,17 +723,10 @@
         </div>
       </div>
 
-      <!-- Budget/Rate Input -->
-      <div class="form-section" id="budget-section">
+      <!-- Budget & Currency -->
+      <div class="form-section">
         <div class="input-group">
-          <input 
-            type="number" 
-            id="budget-amount" 
-            placeholder="0.00"
-            min="0"
-            step="0.01"
-            class="form-input budget-input"
-          >
+          <input type="number" id="budget-amount" placeholder="0.00" min="0" step="0.01" class="form-input budget-input">
           <select id="currency" class="form-select currency-select">
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
@@ -770,25 +735,19 @@
             <option value="AUD">AUD</option>
           </select>
         </div>
-        <p class="helper-text">
-          All payments will be processed in your selected currency
-        </p>
+        <p class="helper-text">All payments will be processed in your selected currency</p>
       </div>
 
-      <!-- Milestone Payment Notice -->
+      <!-- Milestone Notice -->
       <div class="form-section milestone-notice">
         <div class="notice-icon">ℹ️</div>
         <div class="notice-content">
           <h3>Milestone Payment Recommended</h3>
-          <p>
-            Setting up an initial Milestone Payment helps build trust with the freelancer 
-            and increases your chances of getting accepted. This is optional but recommended.
-          </p>
+          <p>Setting up an initial Milestone Payment helps build trust with the freelancer and increases your chances of getting accepted.</p>
         </div>
       </div>
     </div>
 
-    <!-- Modal Footer -->
     <div class="modal-footer">
       <button class="btn btn-secondary">Cancel</button>
       <button class="btn btn-primary" id="hire-btn">
@@ -799,82 +758,200 @@
 </div>
 
 <style>
-/* Hire Me Link Styling (Optional) */
-.hire-me-link {
+/* Keep your existing rn-btn styles (assumed to be defined elsewhere) */
+/* If not, add minimal styling: */
+.rn-btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #000;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.3s;
+  font-weight: bold;
+  cursor: pointer;
 }
+.rn-btn:hover { background: #333; }
+.rn-btn span { display: block; }
 
-.hire-me-link:hover {
-  background: #333;
-}
-
-/* MODAL BASE - BLACK BACKGROUND / WHITE TEXT */
+/* MODAL STYLES (Black background, white text) */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.7);
   display: none; /* Hidden by default */
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .modal-container {
   background: #000;
+  color: #fff;
   border-radius: 16px;
   width: 90%;
   max-width: 600px;
   max-height: 90vh;
   overflow: auto;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  color: #fff;
   border: 1px solid #333;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* ... (rest of your existing modal styles remain unchanged) ... */
-/* Include all the CSS from the previous black/white modal here */
-/* (I've omitted it for brevity but keep all your original styles) */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid #333;
+}
 
-/* Keep all your existing styles from the previous black/white modal */
-/* ... [PASTE ALL YOUR PREVIOUS CSS HERE] ... */
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.close-btn:hover { background: #333; }
+
+.modal-body { padding: 28px; }
+.form-section { margin-bottom: 28px; }
+.form-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.form-input::placeholder { color: #888; }
+
+.payment-type-selector {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+.payment-option { flex: 1; position: relative; }
+.payment-label {
+  display: block;
+  padding: 18px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background: #111;
+  cursor: pointer;
+}
+.payment-option input[type="radio"] { opacity: 0; position: absolute; }
+.payment-option input:checked + .payment-label {
+  border-color: #fff;
+  background: #222;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.2);
+}
+.payment-title { display: block; font-weight: 700; margin-bottom: 6px; }
+.payment-desc { display: block; color: #bbb; font-size: 14px; }
+
+.input-group { display: flex; gap: 14px; }
+.currency-select {
+  min-width: 110px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #111 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23aaa' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 12px center/8px 10px;
+}
+
+.milestone-notice {
+  display: flex;
+  gap: 18px;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border-left: 4px solid #666;
+}
+.notice-content h3 { margin: 0 0 10px; font-size: 17px; }
+.notice-content p { margin: 0; color: #ccc; line-height: 1.5; }
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 20px 28px 28px;
+  border-top: 1px solid #333;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  min-width: 120px;
+}
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #444;
+}
+.btn-secondary:hover { background: #222; border-color: #666; }
+.btn-primary {
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+}
+.btn-primary:hover { background: #f0f0f0; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .payment-type-selector, .input-group { flex-direction: column; }
+  .modal-container { width: 95%; margin: 15px; border-radius: 14px; }
+  .modal-header, .modal-body, .modal-footer { padding-left: 20px; padding-right: 20px; }
+}
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Get elements
-  const hireLink = document.getElementById('hireMeLink');
+  const hireLink = document.querySelector('a[href="#hireMeLink"]');
   const modal = document.getElementById('hireModal');
   const closeBtn = document.querySelector('.close-btn');
   const cancelBtn = document.querySelector('.btn-secondary');
   const hireBtn = document.getElementById('hire-btn');
 
-  // Open modal when "Hire Me" link is clicked
-  hireLink.addEventListener('click', function(e) {
-    e.preventDefault(); // Prevent default link behavior
-    modal.style.display = 'flex'; // Show modal
-  });
+  // Open modal when "HIRE ME" button is clicked
+  if (hireLink) {
+    hireLink.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent #hireMeLink from affecting URL
+      modal.style.display = 'flex';
+    });
+  }
 
-  // Close modal function
-  const closeModal = () => {
-    modal.style.display = 'none';
-  };
+  // Close modal
+  const closeModal = () => { modal.style.display = 'none'; };
 
-  // Close events
-  closeBtn.addEventListener('click', closeModal);
-  cancelBtn.addEventListener('click', closeModal);
-  hireBtn.addEventListener('click', function() {
-    // Add your form submission logic here
-    alert('Hire request sent successfully!');
+  // Attach close events
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+  if (hireBtn) hireBtn.addEventListener('click', function() {
+    alert('Hire request sent!');
     closeModal();
   });
 
