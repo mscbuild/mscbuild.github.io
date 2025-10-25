@@ -679,6 +679,416 @@
             </div>
         </div>
         <!-- End portfolio Area -->
+
+	    <!-- Modal Hire me Start -->
+	<div class="modal-overlay" id="hireModal">
+  <div class="modal-container">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h2>Hire <span class="freelancer-name">{freelancer's username}</span></h2>
+      <button class="close-btn" aria-label="Close modal">&times;</button>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body">
+      <!-- Project Title Section -->
+      <div class="form-section">
+        <label for="project-title">Project Title</label>
+        <input 
+          type="text" 
+          id="project-title" 
+          placeholder="Enter project title"
+          class="form-input"
+        >
+      </div>
+
+      <!-- Private Message Section -->
+      <div class="form-section">
+        <label for="private-message">Private Message</label>
+        <textarea 
+          id="private-message" 
+          rows="4" 
+          placeholder="Write a personalized message to the freelancer..."
+          class="form-input"
+        ></textarea>
+        <p class="helper-text">This message will be sent with your invitation</p>
+      </div>
+
+      <!-- Payment Type Section -->
+      <div class="form-section">
+        <label>Project Type</label>
+        <div class="payment-type-selector">
+          <div class="payment-option">
+            <input 
+              type="radio" 
+              id="fixed-price" 
+              name="payment-type" 
+              value="fixed"
+              checked
+            >
+            <label for="fixed-price" class="payment-label">
+              <span class="payment-title">Fixed-Price</span>
+              <span class="payment-desc">Set a total project budget</span>
+            </label>
+          </div>
+          
+          <div class="payment-option">
+            <input 
+              type="radio" 
+              id="hourly" 
+              name="payment-type" 
+              value="hourly"
+            >
+            <label for="hourly" class="payment-label">
+              <span class="payment-title">Hourly</span>
+              <span class="payment-desc">Set an hourly rate</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Budget/Rate Input -->
+      <div class="form-section" id="budget-section">
+        <div class="input-group">
+          <input 
+            type="number" 
+            id="budget-amount" 
+            placeholder="0.00"
+            min="0"
+            step="0.01"
+            class="form-input budget-input"
+          >
+          <select id="currency" class="form-select currency-select">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="CAD">CAD</option>
+            <option value="AUD">AUD</option>
+          </select>
+        </div>
+        <p class="helper-text">
+          All payments will be processed in your selected currency
+        </p>
+      </div>
+
+      <!-- Milestone Payment Notice -->
+      <div class="form-section milestone-notice">
+        <div class="notice-icon">ℹ️</div>
+        <div class="notice-content">
+          <h3>Milestone Payment Recommended</h3>
+          <p>
+            Setting up an initial Milestone Payment helps build trust with the freelancer 
+            and increases your chances of getting accepted. This is optional but recommended.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="modal-footer">
+      <button class="btn btn-secondary">Cancel</button>
+      <button class="btn btn-primary" id="hire-btn">
+        Hire <span class="freelancer-name">{freelancer's username}</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* MODAL BASE - BLACK BACKGROUND / WHITE TEXT */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background: #000;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* HEADER */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #fff;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: #333;
+}
+
+/* BODY */
+.modal-body {
+  padding: 28px;
+}
+
+.form-section {
+  margin-bottom: 28px;
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 16px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background: #111;
+  color: #fff;
+}
+
+.form-input::placeholder,
+.form-select option {
+  color: #888;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #666;
+  box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.3);
+}
+
+.helper-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* PAYMENT TYPE SELECTOR */
+.payment-type-selector {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.payment-option {
+  flex: 1;
+  position: relative;
+}
+
+.payment-label {
+  display: block;
+  padding: 18px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #111;
+}
+
+.payment-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.payment-option input[type="radio"]:checked + .payment-label {
+  border-color: #fff;
+  background: #222;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.payment-title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.payment-desc {
+  display: block;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* BUDGET INPUT */
+.input-group {
+  display: flex;
+  gap: 14px;
+}
+
+.currency-select {
+  min-width: 110px;
+  background: #111 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23aaa' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 12px center/8px 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* MILESTONE NOTICE */
+.milestone-notice {
+  display: flex;
+  gap: 18px;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border-left: 4px solid #666;
+}
+
+.notice-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.notice-content h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.notice-content p {
+  margin: 0;
+  font-size: 15px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 20px 28px 28px;
+  border-top: 1px solid #333;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  min-width: 120px;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.btn-secondary:hover {
+  background: #222;
+  border-color: #666;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .modal-container {
+    width: 95%;
+    margin: 15px;
+    border-radius: 14px;
+  }
+  
+  .payment-type-selector {
+    flex-direction: column;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .currency-select {
+    min-width: auto;
+  }
+  
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('hireModal');
+  
+  const closeModal = () => {
+    modal.style.display = 'none';
+  };
+  
+  document.querySelector('.close-btn').addEventListener('click', closeModal);
+  document.querySelector('.btn-secondary').addEventListener('click', closeModal);
+  
+  document.getElementById('hire-btn').addEventListener('click', function() {
+    // Add your submission logic here
+    alert('Hire request sent successfully!');
+    closeModal();
+  });
+  
+  // Optional: Close when clicking outside modal
+  window.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+  });
+});
+</script>
+	    <!-- Modal Hire End -->
         
  <!-- Modal Portfolio Body area Start -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
