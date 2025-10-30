@@ -70,6 +70,73 @@
                  <div class="gtranslate_wrapper"></div>
                         
                         <style>
+                            .accessibility-menu.active {
+                                background-color: #212324;
+                            }
+
+                            .accessibility-menu .expand-accessibility .item-desc {
+                                font-size: 16px;
+                                padding-bottom: 20px;
+                                font-weight: 700;
+                            }
+
+                            .accessibility-menu .expand-accessibility .flex {
+                                justify-content: space-between;
+                                gap: 10px;
+                                display: flex;
+                            }
+
+                            .accessibility-menu .expand-accessibility .select-contrast {
+                                display: grid;
+                                place-content: center;
+                                width: 24px;
+                                height: 24px;
+                                border: 1px solid #e8e8e8;
+                                padding: 10px;
+                            }
+
+                            .accessibility-menu .expand-accessibility .select-contrast[data-scheme="default"] {
+                                background-color: #fff;
+                            }
+
+                            .accessibility-menu .expand-accessibility .select-contrast[data-scheme="black_white"] {
+                                background-color: #000;
+                            }
+
+                            .accessibility-menu .expand-accessibility .select-contrast[data-scheme="black_yellow"] {
+                                background-color: #000;
+                            }
+
+                            .accessibility-menu .expand-accessibility .select-contrast[data-scheme="yellow_black"] {
+                                background-color: #ffff00;
+                            }
+
+                            .accessibility-menu .expand-accessibility {
+                                display: none;
+                                position: absolute;
+                                top: 52px;
+                                background-color: #fff;
+                                color: #000;
+                                right: 0;
+                                border: 1px solid #e8e8e8;
+                                border-top: 0;
+                                padding: 20px;
+                                z-index: 101;
+                                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                            }
+                            .accessibility-menu .expand-accessibility.open {
+                                display: block;
+                            }
+                            .accessibility-menu {
+                                display: grid;
+                                place-content: center;
+                                height: 100%;
+                                width: 52px;
+                                margin-right: 16px;
+                                color: #ffffff;
+                                cursor: pointer;
+                                position: relative;
+                            }
                             .gtranslate_wrapper.about-tele2 {
                                 margin-left: 8px;
                             }
@@ -80,7 +147,7 @@
                                 height: 31px;
                                 width: 31px;
 
-                                background-image: url("assets/img/lang.svg");
+                                background-image: url("/img/lang.svg");
                                 background-repeat: no-repeat;
                                 opacity: 1;
                             }
@@ -95,10 +162,9 @@
                                 left: 48px;
                             }
                         </style>
-                        <script>window.gtranslateSettings = {"default_language":"en","languages":["lv","en","et","lt","pl","uk","de","ru","sv"],"globe_color":"#ffffff","wrapper_selector":".gtranslate_wrapper","flag_size":24,"globe_size":31}</script>
+                        <script>window.gtranslateSettings = {"default_language":"lv","languages":["lv","en","et","lt","pl","uk","de","ru","sv"],"globe_color":"#ffffff","wrapper_selector":".gtranslate_wrapper","flag_size":24,"globe_size":31}</script>
                         
                         <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
-                     
                 </li>
                         </ul>
                         <!-- End Mainmanu Nav -->
