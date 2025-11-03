@@ -824,8 +824,9 @@
     <label for="honeypot">Поле для ботов (не заполняйте):</label>
     <input type="text" id="honeypot" name="honeypot" value="">
 	</div>
-    <input type="checkbox" name="gdpr" id="gdprConsent" required>
-     Я соглашаюсь с <a href="/privacy-policy" target="_blank">политикой конфиденциальности</a>.
+     <input type="checkbox" class="custom-control-input" id="gdprConsent" required>
+     <label class="custom-control-label" for="gdprConsent"> I'm not a robot
+     </label>
       
     <!-- Submit Button -->
     <button name="submit" type="submit" id="submit" class="rn-btn">
