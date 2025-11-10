@@ -19704,4 +19704,23 @@ body.white-version .rn-btn-ulderline {
 .white-version .slider-style-6 .cd-headline span {
   color: var(--color-white) !important;
 }
+.feather-arrow-left::before,
+.feather-arrow-right::before {
+  font-family: "Feather" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.feather-arrow-left::before {
+  content: "\e930";
+}
+
+.feather-arrow-right::before {
+  content: "\e931";
+}
 /*# sourceMappingURL=../maps/style.css.map */
