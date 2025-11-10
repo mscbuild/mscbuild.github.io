@@ -19715,12 +19715,4 @@ body.white-version .rn-btn-ulderline {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.feather-arrow-left::before {
-  content: "\e930";
-}
-
-.feather-arrow-right::before {
-  content: "\e931";
-}
 /*# sourceMappingURL=../maps/style.css.map */
