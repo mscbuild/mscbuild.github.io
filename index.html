@@ -1143,5 +1143,15 @@
             }
         });
     </script>
+	<script>
+		// Dynamic greeting based on time
+        const hour = new Date().getHours();
+        let greeting = 'Welcome';
+        if (hour < 12) greeting = 'Good Morning';
+        else if (hour < 18) greeting = 'Good Afternoon';
+        else greeting = 'Good Evening';
+
+        console.log(`${greeting}! Welcome to personal page.`);
+	</script>
        </body>
 </html>
