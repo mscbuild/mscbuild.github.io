@@ -6105,7 +6105,8 @@ strong {
   font-weight: bold;
 }
 
-.logo span {
+b,
+span {
     color: #ff2d78;
   }
 mark {
