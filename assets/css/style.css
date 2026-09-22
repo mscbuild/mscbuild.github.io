@@ -6036,7 +6036,7 @@ ol ul {
 }
 
 .row > [class*=col] {
-  padding-left: 100px;
+  padding-left: 15px;
   padding-right: 15px;
 }
 
