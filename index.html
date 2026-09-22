@@ -1,795 +1,1123 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Yuri Dev || Creating digital experiences</title>
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="description" content="Yuri Dev, personal page, developer">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-    <meta http-equiv="ClearType" content="true" />
-	<meta name="format-detection" content="date=no">
-	<meta name="format-detection" content="telephone=no">
-    <meta name="format-detection" content="address=no">
-    <meta name="format-detection" content="email=no">
-    <meta name="referrer" content="no-referrer">
-    <!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="https://mscbuild.github.io/about/favicon.ico">
-    <!-- CSS 
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Yuri Dev || Creating digital experiences
+  </title>
+  <meta content="noindex, nofollow" name="robots">
+   <meta content="Yuri Dev, personal page, developer" name="description"/>
+   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+    <meta content="true" http-equiv="ClearType">
+     <meta content="date=no" name="format-detection"/>
+     <meta content="telephone=no" name="format-detection"/>
+     <meta content="address=no" name="format-detection"/>
+     <meta content="email=no" name="format-detection"/>
+     <meta content="no-referrer" name="referrer"/>
+     <!-- FOR IE9 below -->
+     <!-- Favicon -->
+     <link href="https://mscbuild.github.io/about/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+     <!-- CSS 
     ============================================ -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-	<link rel="stylesheet" href="assets/css/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-	<!-- Style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!--Font-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<style>
-        /* Hiding the trap from real users */
-        .honeypot {
-            display: none;
-        }
-    </style>
-   </head>
-
-<body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
-
-    <!-- Start Header -->
-    <header class="rn-header haeder-default black-logo-version header--fixed header--sticky">
-        <div class="header-wrapper rn-popup-mobile-menu m--0 row align-items-center">
-            <!-- Start Header Left -->
-            <div class="col-lg-2 col-6">
-                <div class="header-left">
-					<div class="logo">
-						 <strong>MSC</strong><span>build</span>
-					</div>
-                </div>
-            </div>
-            <!-- End Header Left -->
-            <!-- Start Header Center -->
-            <div class="col-lg-10 col-6">
-                <div class="header-center">
-                    <nav id="sideNav" class="mainmenu-nav navbar-example2 d-none d-xl-block onepagenav">
-                        <!-- Start Mainmanu Nav -->
-                        <ul class="primary-menu nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link smoth-animation" href="#about">About</a></li>
-                            <li class="nav-item"><a class="nav-link smoth-animation" href="#features">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contacts">Contact</a></li>
-							<div class="gtranslate_wrapper"</div>
-                           <style>
-                     .gglobe {
-                                position: relative;
-                                top: 2px;
-						        margin: 10px 5px;
-                                height: 23px;
-                                width: 23px;
-
-
-                        background-image: url('assets/img/lang.svg');
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        opacity: 1;
-                    }
-
-                    .header-mob-menu .gglobe {
-                        margin-left: 8px;
-                        width: 30px;
-                        height: 30px;
-
-                        background-image: url('assets/img/lang.svg');
-                    }
-                </style>
-                <script>window.gtranslateSettings = {"default_language":"en","languages":["en","lv","et","lt","pl","uk","de","ru","sv"],"globe_color":"#ffffff","wrapper_selector":".gtranslate_wrapper","flag_size":24,"globe_size":32}</script>
-                <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
-						</ul>
-					   <!-- End Mainmanu Nav -->
-                    </nav>
-                    <!-- Start Header Right  -->
-                    <div class="header-right">
-                        <a class="rn-btn" href="#contacts"><span>HIRE ME</span></a>
-                        <div class="hamberger-menu d-block d-xl-none">
-                            <i id="menuBtn" class="fas fa-bars humberger-menu"></i>
-                        </div>
-                        <div class="close-menu d-block">
-                            <span class="closeTrigger">
-                            <i data-feather="x"></i>
-                        </span>
-                        </div>
-                    </div>
-                    <!-- End Header Right  -->
-
-                </div>
-            </div>
-            <!-- End Header Center -->
+     <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+     <link href="assets/css/slick.css" rel="stylesheet"/>
+     <link href="assets/css/slick-theme.css" rel="stylesheet"/>
+     <link href="assets/css/aos.css" rel="stylesheet"/>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+     <!-- Style css -->
+     <link href="assets/css/style.css" rel="stylesheet"/>
+     <!--Font-->
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"/>
+    </meta>
+   </meta>
+  </meta>
+ </head>
+ <body class="template-color-1 spybody" data-offset="70" data-spy="scroll" data-target=".navbar-example2">
+  <!-- Start Header -->
+  <header class="rn-header haeder-default black-logo-version header--fixed header--sticky">
+   <div class="header-wrapper rn-popup-mobile-menu m--0 row align-items-center">
+    <!-- Start Header Left -->
+    <div class="col-lg-2 col-6">
+     <div class="header-left">
+      <div class="logo">
+       <strong>
+        MSC
+       </strong>
+       <span>
+        build
+       </span>
+      </div>
+     </div>
+    </div>
+    <!-- End Header Left -->
+    <!-- Start Header Center -->
+    <div class="col-lg-10 col-6">
+     <div class="header-center">
+      <nav class="mainmenu-nav navbar-example2 d-none d-xl-block onepagenav" id="sideNav">
+       <!-- Start Mainmanu Nav -->
+       <ul class="primary-menu nav nav-pills">
+        <li class="nav-item">
+         <a class="nav-link" href="#home">
+          Home
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link smoth-animation" href="#about">
+          About
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link smoth-animation" href="#features">
+          Services
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="#portfolio">
+          Portfolio
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="#contacts">
+          Contact
+         </a>
+        </li>
+       </ul>
+       <div class="gtranslate_wrapper">
+        <script>
+         window.gtranslateSettings = {"default_language":"en","languages":["en","lv","et","lt","pl","uk","de","ru","sv"],"globe_color":"#ffffff","wrapper_selector":".gtranslate_wrapper","flag_size":24,"globe_size":32}
+        </script>
+        <script defer="" src="https://cdn.gtranslate.net/widgets/latest/globe.js">
+        </script>
+       </div>
+       <!-- End Mainmanu Nav -->
+      </nav>
+      <!-- Start Header Right  -->
+      <div class="header-right">
+       <a class="rn-btn" href="#contacts">
+        <span>
+         HIRE ME
+        </span>
+       </a>
+       <div class="hamberger-menu d-block d-xl-none">
+        <i class="fas fa-bars humberger-menu" id="menuBtn">
+        </i>
+       </div>
+       <div class="close-menu d-block">
+        <span class="closeTrigger">
+         <i data-feather="x">
+         </i>
+        </span>
+       </div>
+      </div>
+      <!-- End Header Right  -->
+     </div>
+    </div>
+    <!-- End Header Center -->
+   </div>
+  </header>
+  <!-- End Header Area -->
+  <!-- Start Popup Mobile Menu  -->
+  <div class="popup-mobile-menu">
+   <div class="inner">
+    <div class="menu-top">
+     <div class="menu-header">
+      <div class="close-button">
+       <button class="close-menu-activation close">
+        <i data-feather="x">
+        </i>
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="content">
+     <ul class="primary-menu nav nav-pills onepagenav">
+      <li class="nav-item current">
+       <a class="nav-link smoth-animation active" href="#home">
+        Home
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link smoth-animation" href="#about">
+        About
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link smoth-animation" href="#features">
+        Services
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link smoth-animation" href="#portfolio">
+        Portfolio
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#contacts">
+        Contact
+       </a>
+      </li>
+     </ul>
+     <!-- social sharea area -->
+     <div class="social-share-style-1 mt--40">
+      <span class="title">
+       find me
+      </span>
+      <ul class="social-share d-flex liststyle">
+       <li class="facebook">
+        <a href="https://x.com/">
+         <svg class="feather feather-facebook" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+          </path>
+         </svg>
+        </a>
+       </li>
+       <li class="github">
+        <a href="https://github.com/mscbuild">
+         <svg class="feather feather-instagram" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <rect height="20" rx="5" ry="5" width="20" x="2" y="2">
+          </rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z">
+          </path>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5">
+          </line>
+         </svg>
+        </a>
+       </li>
+       <li class="linkedin">
+        <a href="https://www.linkedin.com/in/jurijsrck">
+         <svg class="feather feather-linkedin" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+          </path>
+          <rect height="12" width="4" x="2" y="9">
+          </rect>
+          <circle cx="4" cy="4" r="2">
+          </circle>
+         </svg>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <!-- end -->
+    </div>
+   </div>
+  </div>
+  <!-- End Popup Mobile Menu  -->
+  <main class="main-page-wrapper">
+   <!-- Start Slider Area -->
+   <div class="rn-slider-area" id="home">
+    <div class="slide slider-style-1">
+     <div class="container">
+      <div class="row row--30 align-items-center">
+       <div class="order-2 order-lg-1 col-lg-7 mt_md--50 mt_sm--50 mt_lg--30">
+        <div class="content">
+         <div class="inner">
+          <span class="subtitle">
+           Welcome to my website
+          </span>
+          <h1 class="title">
+           Hi, I&rsquo;m
+           <span>
+            Yuri Dev
+           </span>
+           <br/>
+           <span class="header-caption" id="page-top">
+            <!-- type headline start-->
+            <span class="cd-headline clip is-full-width">
+             <span>
+              a
+             </span>
+             <!-- ROTATING TEXT -->
+             <span class="cd-words-wrapper">
+              <b class="is-visible">
+               Web Developer.
+              </b>
+              <b class="is-hidden">
+               Freelancer.
+              </b>
+             </span>
+            </span>
+            <!-- type headline end -->
+           </span>
+          </h1>
+          <div>
+           <p class="description">
+            I create beautiful, responsive websites and applications that help businesses grow and succeed in the digital world. I create code to meet specific needs and share my experiences online.
+           </p>
+          </div>
+         </div>
+         <div class="row">
+          <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
+           <div class="social-share-inner-left">
+            <span class="title">
+             find me
+            </span>
+            <ul class="social-share d-flex liststyle">
+             <li class="codepen">
+              <a href="https://codepen.io/jrck">
+               <i data-feather="codepen">
+               </i>
+              </a>
+             </li>
+             <li class="github">
+              <a href="https://github.com/mscbuild">
+               <i data-feather="github">
+               </i>
+              </a>
+             </li>
+             <li class="linkedin">
+              <a href="https://www.linkedin.com/in/jurijsrck">
+               <i data-feather="linkedin">
+               </i>
+              </a>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
         </div>
-    </header>
-    <!-- End Header Area -->
-    <!-- Start Popup Mobile Menu  -->
-    <div class="popup-mobile-menu">
+       </div>
+       <div class="order-1 order-lg-2 col-lg-5">
+        <div class="thumbnail">
+         <div class="inner">
+          <img alt="Personal Portfolio Images" src="assets/img/hero.png"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- End Slider Area -->
+   <!-- Start about Area -->
+   <div class="rn-about-area rn-section-gap section-separator" id="about">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-5">
+       <div class="image-area" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" data-aos-once="true">
+        <div class="thumbnail">
+         <img alt="" src="assets/img/hero.png"/>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-7 mt_sm--30" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" data-aos-once="true">
+       <div class="contant">
+        <div class="section-title text-left">
+         <span class="subtitle">
+          Visit my portfolio
+         </span>
+         <h2 class="title">
+          About Me
+         </h2>
+        </div>
+        <p class="discription">
+         Innovative front-end developer with a passion for crafting responsive, user-centric web experiences. Proficient in HTML, CSS, and JavaScript, with extensive experience in frameworks like Bootstrap, React. Proven ability to design and implement visually appealing, intuitive interfaces that significantly improve user engagement
+        </p>
+        <p class="discription">
+         I help businesses like yours increase visibility, achieve top search rankings, and turn organic traffic into real revenue.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- End about Area -->
+   <!-- Start Service Area -->
+   <div class="rn-service-area rn-section-gap section-separator" id="features">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-12">
+       <div class="section-title text-left" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" data-aos-once="true">
+        <span class="subtitle">
+         Services
+        </span>
+        <h2 class="title">
+         What I Do
+        </h2>
+       </div>
+      </div>
+     </div>
+     <div class="row row--25 mt_md--10 mt_sm--10">
+      <!-- Start Single Service -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" data-aos-once="true">
+       <div class="rn-service">
         <div class="inner">
-            <div class="menu-top">
-                <div class="menu-header">
-                  <div class="close-button">
-                        <button class="close-menu-activation close"><i data-feather="x"></i></button>
-                    </div>
-                </div>
-                   </div>
-            <div class="content">
-                <ul class="primary-menu nav nav-pills onepagenav">
-                     <li class="nav-item current"><a class="nav-link smoth-animation active" href="#home">Home</a></li>
-                     <li class="nav-item"><a class="nav-link smoth-animation" href="#about">About</a></li>
-                     <li class="nav-item"><a class="nav-link smoth-animation" href="#features">Services</a></li>
-                     <li class="nav-item"><a class="nav-link smoth-animation" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacts">Contact</a></li>
-                </ul>
-                 <!-- social sharea area -->
-                <div class="social-share-style-1 mt--40">
-                    <span class="title">find me</span>
-                    <ul class="social-share d-flex liststyle">
-                        <li class="facebook"><a href="https://x.com/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
-                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                </svg></a>
-                        </li>
-                        <li class="github"><a href="https://github.com/mscbuild"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg></a>
-                        </li>
-                        <li class="linkedin"><a href="https://www.linkedin.com/in/jurijsrck"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                    <rect x="2" y="9" width="4" height="12"></rect>
-                                    <circle cx="4" cy="4" r="2"></circle>
-                                </svg></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- end -->
-            </div>
+         <div class="icon">
+          <i data-feather="menu">
+          </i>
+         </div>
+         <div class="content">
+          <h4 class="title">
+           <a href="#">
+            Business Strategy
+           </a>
+          </h4>
+          <p class="description">
+           I specialize in creating solutions that are not only visually engaging but also align with business goals.
+          </p>
+          <a class="read-more-button" href="#">
+           <i class="feather-arrow-right">
+           </i>
+          </a>
+         </div>
         </div>
+        <a class="over-link" href="#">
+        </a>
+       </div>
+      </div>
+      <!-- End SIngle Service -->
+      <!-- Start Single Service -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500" data-aos-once="true">
+       <div class="rn-service">
+        <div class="inner">
+         <div class="icon">
+          <i data-feather="edit">
+          </i>
+         </div>
+         <div class="content">
+          <h4 class="title">
+           <a href="#">
+            Development
+           </a>
+          </h4>
+          <p class="description">
+           Tailored solutions to meet specific business needs, including unique features and functionalities.
+          </p>
+          <a class="read-more-button" href="#">
+           <i class="feather-arrow-right">
+           </i>
+          </a>
+         </div>
+        </div>
+        <a class="over-link" href="#">
+        </a>
+       </div>
+      </div>
+      <!-- End SIngle Service -->
+      <!-- Start Single Service -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500" data-aos-once="true">
+       <div class="rn-service">
+        <div class="inner">
+         <div class="icon">
+          <i data-feather="tv">
+          </i>
+         </div>
+         <div class="content">
+          <h4 class="title">
+           <a href="#">
+            Design
+           </a>
+          </h4>
+          <p class="description">
+           I can create minimal &amp; modern web design with latest web technologies.
+          </p>
+          <a class="read-more-button" href="#">
+           <i class="feather-arrow-right">
+           </i>
+          </a>
+         </div>
+        </div>
+        <a class="over-link" href="#">
+        </a>
+       </div>
+      </div>
+      <!-- End SIngle Service -->
+      <!-- Start Single Service -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" data-aos-once="true">
+       <div class="rn-service">
+        <div class="inner">
+         <div class="icon">
+          <i data-feather="shield">
+          </i>
+         </div>
+         <div class="content">
+          <h4 class="title">
+           <a href="#">
+            Website Security
+           </a>
+          </h4>
+          <p class="description">
+           Implementing security measures to protect websites from cyber threats and data breaches.
+          </p>
+          <a class="read-more-button" href="#">
+           <i class="feather-arrow-right">
+           </i>
+          </a>
+         </div>
+        </div>
+        <a class="over-link" href="#">
+        </a>
+       </div>
+      </div>
+      <!-- End SIngle Service -->
+      <!-- Start Single Service -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500" data-aos-once="true">
+       <div class="rn-service">
+        <div class="inner">
+         <div class="icon">
+          <i data-feather="wifi">
+          </i>
+         </div>
+         <div class="content">
+          <h4 class="title">
+           <a href="#">
+            SEO
+           </a>
+          </h4>
+          <p class="description">
+           Implementing strategies to improve website visibility in search engine results.
+          </p>
+          <a class="read-more-button" href="#">
+           <i class="feather-arrow-right">
+           </i>
+          </a>
+         </div>
+        </div>
+        <a class="over-link" href="#">
+        </a>
+       </div>
+      </div>
+      <!-- End SIngle Service -->
+      <!-- Start Single Service -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500" data-aos-once="true">
+       <div class="rn-service">
+        <div class="inner">
+         <div class="icon">
+          <i data-feather="slack">
+          </i>
+         </div>
+         <div class="content">
+          <h4 class="title">
+           <a href="#">
+            Maintenance
+           </a>
+          </h4>
+          <p class="description">
+           Providing ongoing support, updates, and bug fixes to ensure websites run smoothly.
+          </p>
+          <a class="read-more-button" href="#">
+           <i class="feather-arrow-right">
+           </i>
+          </a>
+         </div>
+        </div>
+        <a class="over-link" href="#">
+        </a>
+       </div>
+      </div>
+      <!-- End SIngle Service -->
+     </div>
     </div>
-    <!-- End Popup Mobile Menu  -->
-<main class="main-page-wrapper">
-    <!-- Start Slider Area -->
-        <div id="home" class="rn-slider-area">
-            <div class="slide slider-style-1">
-                <div class="container">
-                    <div class="row row--30 align-items-center">
-                        <div class="order-2 order-lg-1 col-lg-7 mt_md--50 mt_sm--50 mt_lg--30">
-                            <div class="content">
-                                <div class="inner">
-                                    <span class="subtitle">Welcome to my website</span>
-                                    <h1 class="title">Hi, I’m <span>Yuri Dev</span><br>
-                                        <span class="header-caption" id="page-top">
-                                            <!-- type headline start-->
-                                            <span class="cd-headline clip is-full-width">
-                                                <span>a </span>
-                                                <!-- ROTATING TEXT -->
-                                                <span class="cd-words-wrapper">
-                                                    <b class="is-visible">Web Developer.</b>
-                                                    <b class="is-hidden">Freelancer.</b>
-                                                </span>
-                                            </span>
-                                            <!-- type headline end -->
-                                        </span>
-                                    </h1>
-                                    <div>
-                                        <p class="description">I create beautiful, responsive websites and applications that help businesses grow and succeed in the digital world. I create code to meet specific needs and share my experiences online.</p>
-                                    </div>
-								</div>
-                             <div class="row">
-                                    <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
-                                        <div class="social-share-inner-left">
-                                            <span class="title">find me</span>
-                                            <ul class="social-share d-flex liststyle">
-                                                <li class="codepen"><a href="https://codepen.io/jrck"><i data-feather="codepen"></i></a>
-                                                </li>
-                                                <li class="github"><a href="https://github.com/mscbuild"><i data-feather="github"></i></a>
-                                                </li>
-												<li class="linkedin"><a href="https://www.linkedin.com/in/jurijsrck"><i data-feather="linkedin"></i></a>
-                                                </li>
-											</ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="order-1 order-lg-2 col-lg-5">
-                            <div class="thumbnail">
-                                <div class="inner">
-                                    <img src="assets/img/hero.png" alt="Personal Portfolio Images">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+   </div>
+   <!-- End Service Area  -->
+   <!-- Start Portfolio Area -->
+   <div class="rn-portfolio-area rn-section-gap section-separator" id="portfolio">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-12">
+       <div class="section-title text-center">
+        <span class="subtitle">
+         Visit my portfolio and keep your feedback
+        </span>
+        <h2 class="title">
+         My Portfolio
+        </h2>
+       </div>
+      </div>
+     </div>
+     <div class="row row--25 mt--10 mt_md--10 mt_sm--10">
+      <!-- Start Single Portfolio -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="100" data-aos-once="true">
+       <div class="rn-portfolio" data-bs-target="#exampleModalCenter" data-bs-toggle="modal">
+        <div class="inner">
+         <div class="thumbnail">
+          <a href="javascript:void(0)">
+           <img alt="Personal Portfolio Images" src="assets/img/dev-21.png"/>
+          </a>
+         </div>
+         <div class="content">
+          <div class="category-info">
+           <div class="category-list">
+            <a href="javascript:void(0)">
+             Design
+            </a>
+           </div>
+           <div class="meta">
+            <span>
+             <a href="javascript:void(0)">
+              <i class="fa-solid fa-heart">
+              </i>
+             </a>
+             650
+            </span>
+           </div>
+          </div>
+          <h4 class="title">
+           <a href="javascript:void(0)">
+            Ecommerce Website Design &amp; Services
+            <i class="feather-arrow-right">
+            </i>
+           </a>
+          </h4>
+         </div>
         </div>
-        <!-- End Slider Area -->
-          <!-- Start about Area -->
-        <div id="about" class="rn-about-area rn-section-gap section-separator">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true" class="image-area">
-                            <div class="thumbnail">
-                                <img src="assets/img/hero.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true" class="col-lg-7 mt_sm--30">
-                        <div class="contant">
-                            <div class="section-title text-left">
-                                <span class="subtitle">Visit my portfolio </span>
-                                <h2 class="title">About Me</h2>
-                            </div>
-                            <p class="discription">
-                                Innovative front-end developer with a passion for crafting responsive, user-centric web experiences. Proficient in HTML, CSS, and JavaScript, with extensive experience in frameworks like Bootstrap, React. Proven ability to design and implement visually appealing, intuitive interfaces that significantly improve user engagement
-                            </p>
-                            <p class="discription">
-                               I help businesses like yours increase visibility, achieve top search rankings, and turn organic traffic into real revenue.
-                            </p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
+       </div>
+      </div>
+      <!-- End Single Portfolio  -->
+      <!-- Start Single Portfolio  -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+       <div class="rn-portfolio" data-bs-target="#exampleModalCenter-1" data-bs-toggle="modal">
+        <div class="inner">
+         <div class="thumbnail">
+          <a href="javascript:void(0)">
+           <img alt="Personal Portfolio Images" src="assets/img/dev-7.png"/>
+          </a>
+         </div>
+         <div class="content">
+          <div class="category-info">
+           <div class="category-list">
+            <a href="javascript:void(0)">
+             Web Design
+            </a>
+           </div>
+           <div class="meta">
+            <span>
+             <a href="javascript:void(0)">
+              <i class="fa-solid fa-heart">
+              </i>
+             </a>
+             600
+            </span>
+           </div>
+          </div>
+          <h4 class="title">
+           <a href="javascript:void(0)">
+            Responsive Nextjs website using Tailwind
+            <i class="feather-arrow-right">
+            </i>
+           </a>
+          </h4>
+         </div>
         </div>
-        <!-- End about Area -->
-         <!-- Start Service Area -->
-        <div class="rn-service-area rn-section-gap section-separator" id="features">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-left" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true">
-                            <span class="subtitle">Services</span>
-                            <h2 class="title">What I Do</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row row--25 mt_md--10 mt_sm--10">
-
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="menu"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Business Strategy</a></h4>
-                                    <p class="description">I specialize in creating solutions that are not only visually engaging but also align with business goals.</p>
-                                    <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                     <i data-feather="edit"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Development</a></h4>
-                                    <p class="description">Tailored solutions to meet specific business needs, including unique features and functionalities.</p>
-                                    <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="tv"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Design</a></h4>
-                                    <p class="description">I can create minimal & modern web design with lasted web technologies.</p>
-                                    <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="shield"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Website Security</a></h4>
-                                    <p class="description">Implementing security measures to protect websites from cyber threats and data breaches.
-                                    </p>
-                                    <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="wifi"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">SEO</a></h4>
-                                    <p class="description">Implementing strategies to improve website visibility in search engine results.</p>
-                                    <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="slack"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Maintenance</a></h4>
-                                    <p class="description">Providing ongoing support, updates, and bug fixes to ensure websites run smoothly.</p>
-                                    <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                  </div>
-            </div>
+       </div>
+      </div>
+      <!-- End Single Portfolio  -->
+      <!-- Start Single Portfolio  -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+       <div class="rn-portfolio" data-bs-target="#exampleModalCenter-3" data-bs-toggle="modal">
+        <div class="inner">
+         <div class="thumbnail">
+          <a href="javascript:void(0)">
+           <img alt="Personal Portfolio Images" src="assets/img/dev-5.png"/>
+          </a>
+         </div>
+         <div class="content">
+          <div class="category-info">
+           <div class="category-list">
+            <a href="javascript:void(0)">
+             Design
+            </a>
+           </div>
+           <div class="meta">
+            <span>
+             <a href="javascript:void(0)">
+              <i class="fa-solid fa-heart">
+              </i>
+             </a>
+             700
+            </span>
+           </div>
+          </div>
+          <h4 class="title">
+           <a href="javascript:void(0)">
+            Responsive Restaurant Website
+            <i class="feather-arrow-right">
+            </i>
+           </a>
+          </h4>
+         </div>
         </div>
-        <!-- End Service Area  -->
-
- 		<!-- Start Portfolio Area -->
-        <div class="rn-portfolio-area rn-section-gap section-separator" id="portfolio">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-center">
-                            <span class="subtitle">Visit my portfolio and keep your feedback</span>
-                            <h2 class="title">My Portfolio</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row row--25 mt--10 mt_md--10 mt_sm--10">
-                    <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="100" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                            <a href="javascript:void(0)">
-                                                <img src="assets/img/dev-21.png" alt="Personal Portfolio Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <div class="category-info">
-                                                <div class="category-list">
-                                                    <a href="javascript:void(0)">Design</a>
-                                                </div>
-                                                <div class="meta">
-                                                    <span><a href="javascript:void(0)"><i class="fa-solid fa-heart"></i></a>
-                                                        650</span>
-                                                </div>
-                                            </div>
-                                            <h4 class="title"><a href="javascript:void(0)">Ecommerce Website Design & Services<i
-                                                        class="feather-arrow-right"></i></a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Portfolio  -->
-
-                            <!-- Start Single Portfolio  -->
-                             <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#exampleModalCenter-1">
-                            <div class="inner">
-                                <div class="thumbnail">
-										  <a href="javascript:void(0)">
-                                         <img src="assets/img/dev-7.png" alt="Personal Portfolio Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <div class="category-info">
-                                                <div class="category-list">
-                                                    <a href="javascript:void(0)">Web Design</a>
-                                                </div>
-                                                <div class="meta">
-                                                    <span><a href="javascript:void(0)"><i class="fa-solid fa-heart"></i></a>
-                                                        600</span>
-                                                </div>
-                                            </div>
-                                            <h4 class="title"><a href="javascript:void(0)">Responsive Nextjs website using Tailwind<i
-                                                        class="feather-arrow-right"></i></a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Portfolio  -->
-
-                            <!-- Start Single Portfolio  -->
-                            <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#exampleModalCenter-3">
-                            <div class="inner">
-                                <div class="thumbnail">
-									 <a href="javascript:void(0)">
-                                        <img src="assets/img/dev-5.png" alt="Personal Portfolio Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <div class="category-info">
-                                                <div class="category-list">
-                                                    <a href="javascript:void(0)">Design</a>
-                                                </div>
-                                                <div class="meta">
-                                                    <span><a href="javascript:void(0)"><i class="fa-solid fa-heart"></i></a>
-                                                        700</span>
-                                                </div>
-                                            </div>
-                                            <h4 class="title"><a href="javascript:void(0)">Responsive Restaurant Website<i
-                                                        class="feather-arrow-right"></i></a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Portfolio  -->
-
-							<!-- Start Single Portfolio  -->
-                        <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                            <a href="https://mscbuild.github.io/about/neon.html">
-                                                <img src="assets/img/dev-8.png" alt="Personal Portfolio Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <div class="category-info">
-                                                <div class="category-list">
-                                                    <a href="https://mscbuild.github.io/about/neon.html">Web Design</a>
-                                                </div>
-                                                <div class="meta">
-                                                    <span><a href="#"><i class="fa-solid fa-heart"></i></a>
-                                                        760</span>
-                                                </div>
-                                            </div>
-                                            <h4 class="title"><a href="https://mscbuild.github.io/about/neon.html">Beautiful Animated 3D Websites<i
-                                                        class="feather-arrow-right"></i></a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Portfolio  -->
-
-
-                            <!-- Start Single Portfolio  -->
-                        <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                            <a href="https://mscbuild.github.io/about/agent.html">
-                                                <img src="assets/img/dev-61.png" alt="Personal Portfolio Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <div class="category-info">
-                                                <div class="category-list">
-                                                    <a href="https://mscbuild.github.io/about/agent.html">Development</a>
-                                                </div>
-                                                <div class="meta">
-                                                    <span><a href="#"><i class="fa-solid fa-heart"></i></a>
-                                                       500</span>
-                                                </div>
-                                            </div>
-                                            <h4 class="title"><a href="https://mscbuild.github.io/about/agent.html">Creating and deploying AI agents<i
-                                                        class="feather-arrow-left"></i></a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Portfolio  -->
-							<!-- Start Single Portfolio  -->
-                        <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true" class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-bs-toggle="modal" data-bs-target="#">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                            <a href="https://codepen.io/jrck/full/raMrOLz">
-                                                <img src="assets/img/dev-4.png" alt="Personal Portfolio Images">
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <div class="category-info">
-                                                <div class="category-list">
-                                                    <a href="https://codepen.io/jrck/full/raMrOLz">Development</a>
-                                                </div>
-                                                <div class="meta">
-                                                    <span><a href="https://codepen.io/jrck/full/raMrOLz"><i class="fa-solid fa-heart"></i></a>
-                                                       750</span>
-                                                </div>
-                                            </div>
-                                                   <h4 class="title"><a href="https://codepen.io/jrck/full/raMrOLz">Software Development<i   
-                                                        class="feather-arrow-left"></i></a></h4>
-                                        </div>
-                                    </div>
-								</div>
-                            </div>
-						   <!-- End Single Portfolio  -->
-						 </div>
-                    </div>
-			  <div class="mt--40 text-center margin-t-20">
-                   <a class="rn-btn rbbtn rn-single btn-medium  shadow-has" href="portf.html"> See More</a>
-				 </div>
-            </div>
-		 </div>
-	    <!-- End portfolio Area -->
-	
-        <!-- Modal Portfolio Body area Start -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"><i data-feather="x"></i></span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row align-items-center">
-
-                            <div class="col-lg-6">
-                                <div class="portfolio-popup-thumbnail">
-                                    <div class="image">
-                                        <img class="w-100" src="assets/img/dev-21.png" alt="slide">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="text-content">
-                                    <h3>
-                                        <span>Featured - Design</span> Website Design Development.
-                                    </h3>
-                                    <p class="mb--30">Development of a complex design solution for an e-commerce platform aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages — from market research to creation of final UI layouts and prototypes.</p>
-									<p><b>*Achieved results:</b></p>
-								    <p>Positive feedback from users about the simplicity and convenience of the interface, 10% reduction in cancellations, visibility in search systems. The product complies with technical requirements and quality standards.</p> 
-									<p><b>*Technology Stack:</b></p>
-									<p>· Figma</p>
-									<div class="button-group mt--20">
-                                        <a href="https://www.behance.net/gallery/228404099/E-commerce-bussiness-design" class="rn-btn thumbs-icon">
-                                            <span>LIKE THIS</span>
-                                            <i data-feather="thumbs-up"></i>
-											</a>
-                                        <a href="https://www.behance.net/gallery/228404099/E-commerce-bussiness-design" class="rn-btn">
-                                            <span>VIEW PROJECT</span>
-                                            <i data-feather="chevron-right"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <!-- End of .text-content -->
-                            </div>
-                        </div>
-                        <!-- End of .row Body-->
-                    </div>
-                </div>
-            </div>
+       </div>
+      </div>
+      <!-- End Single Portfolio  -->
+      <!-- Start Single Portfolio  -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+       <div class="rn-portfolio" data-bs-target="#" data-bs-toggle="modal">
+        <div class="inner">
+         <div class="thumbnail">
+          <a href="https://mscbuild.github.io/about/neon.html">
+           <img alt="Personal Portfolio Images" src="assets/img/dev-8.png"/>
+          </a>
+         </div>
+         <div class="content">
+          <div class="category-info">
+           <div class="category-list">
+            <a href="https://mscbuild.github.io/about/neon.html">
+             Web Design
+            </a>
+           </div>
+           <div class="meta">
+            <span>
+             <a href="#">
+              <i class="fa-solid fa-heart">
+              </i>
+             </a>
+             760
+            </span>
+           </div>
+          </div>
+          <h4 class="title">
+           <a href="https://mscbuild.github.io/about/neon.html">
+            Beautiful Animated 3D Websites
+            <i class="feather-arrow-right">
+            </i>
+           </a>
+          </h4>
+         </div>
         </div>
-        <!-- End Modal Portfolio area -->
-
-	<!-- Modal Portfolio Body area Start-1 -->
-        <div class="modal fade" id="exampleModalCenter-1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"><i data-feather="x"></i></span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row align-items-center">
-
-                            <div class="col-lg-6">
-                                <div class="portfolio-popup-thumbnail">
-                                    <div class="image">
-                                        <img class="w-100" src="assets/img/dev-7.png" alt="slide">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="text-content">
-                                    <h3>
-                                        <span>Featured - Design</span> Website Design Development.
-                                    </h3>
-									<p><b>Strategy · UI/UX Design · Art Direction · Web Development</b></p>
-                                    <p class="mb--30">Developing a comprehensive design solution for a highly effective, professional, and memorable portfolio website that maximizes the chances of achieving professional goals: attracting target clients, getting a job, or increasing personal brand awareness.</p>
-									<p><b>*Achieved results:</b></p>
-                                    <p>The design is perceived as professional, in line with modern trends, and reflective of the personal brand, adaptive design, unique animations, interactive elements. Positive User Experience (UX): More than 80% of test users easily find the information.</p> 
-									<p><b>*Technology Stack:</b></p>
-									<p>Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Responsive Design</p>
-									<div class="button-group mt--20">
-                                        <a href="#" class="rn-btn thumbs-icon">
-                                            <span>LIKE THIS</span>
-                                            <i data-feather="thumbs-up"></i>
-                                        </a>
-                                        <a href="https://mysite-roan-xi.vercel.app" class="rn-btn">
-                                            <span>VIEW PROJECT</span>
-                                            <i data-feather="chevron-right"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <!-- End of .text-content -->
-                            </div>
-                        </div>
-                        <!-- End of .row Body-->
-                    </div>
-                </div>
-            </div>
+       </div>
+      </div>
+      <!-- End Single Portfolio  -->
+      <!-- Start Single Portfolio  -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+       <div class="rn-portfolio" data-bs-target="#" data-bs-toggle="modal">
+        <div class="inner">
+         <div class="thumbnail">
+          <a href="https://mscbuild.github.io/about/agent.html">
+           <img alt="Personal Portfolio Images" src="assets/img/dev-61.png"/>
+          </a>
+         </div>
+         <div class="content">
+          <div class="category-info">
+           <div class="category-list">
+            <a href="https://mscbuild.github.io/about/agent.html">
+             Development
+            </a>
+           </div>
+           <div class="meta">
+            <span>
+             <a href="#">
+              <i class="fa-solid fa-heart">
+              </i>
+             </a>
+             500
+            </span>
+           </div>
+          </div>
+          <h4 class="title">
+           <a href="https://mscbuild.github.io/about/agent.html">
+            Creating and deploying AI agents
+            <i class="feather-arrow-left">
+            </i>
+           </a>
+          </h4>
+         </div>
         </div>
-        <!-- End Modal Portfolio area -->
-
-	 <!-- Modal Portfolio Body area Start -3 -->
-        <div class="modal fade" id="exampleModalCenter-3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"><i data-feather="x"></i></span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row align-items-center">
-
-                            <div class="col-lg-6">
-                                <div class="portfolio-popup-thumbnail">
-                                    <div class="image">
-                                        <img class="w-100" src="assets/img/dev-5.png" alt="slide">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="text-content">
-                                    <h3>
-                                        <span>Featured - Design</span> Website Design Development.
-                                    </h3>
-                                    <p class="mb--30">Development of a complex design solution for an restaraunt aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages — from market research to creation of final UI layouts and prototypes.</p>
-									<p><b>*Achieved results:</b></p>
-                                    <p>Fully responsive design, streamlined checkout process, product filtering system, wishlist functionality, and integrated customer reviews. 40% increase in conversion rate, 25% reduction in bounce rate, and significant improvement in average order value within the first 3 months of launch.</p> 
-									<p><b>*Technology Stack:</b></p>
-									<p>HTML5 · CSS3 · JavaScript · SCSS · Bootstrap · Responsive Design</p>
-                                    <div class="button-group mt--20">
-                                        <a href="https://mscbuild.github.io/restaurant-website/" class="rn-btn thumbs-icon">
-                                            <span>LIKE THIS</span>
-                                            <i data-feather="thumbs-up"></i>
-                                        </a>
-                                        <a href="https://mscbuild.github.io/restaurant-website/" class="rn-btn">
-                                            <span>VIEW PROJECT</span>
-                                            <i data-feather="chevron-right"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <!-- End of .text-content -->
-                            </div>
-                        </div>
-                        <!-- End of .row Body-->
-                    </div>
-                </div>
-            </div>
+       </div>
+      </div>
+      <!-- End Single Portfolio  -->
+      <!-- Start Single Portfolio  -->
+      <div class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30" data-aos="fade-up" data-aos-delay="300" data-aos-once="true">
+       <div class="rn-portfolio" data-bs-target="#" data-bs-toggle="modal">
+        <div class="inner">
+         <div class="thumbnail">
+          <a href="https://codepen.io/jrck/full/raMrOLz">
+           <img alt="Personal Portfolio Images" src="assets/img/dev-4.png"/>
+          </a>
+         </div>
+         <div class="content">
+          <div class="category-info">
+           <div class="category-list">
+            <a href="https://codepen.io/jrck/full/raMrOLz">
+             Development
+            </a>
+           </div>
+           <div class="meta">
+            <span>
+             <a href="https://codepen.io/jrck/full/raMrOLz">
+              <i class="fa-solid fa-heart">
+              </i>
+             </a>
+             750
+            </span>
+           </div>
+          </div>
+          <h4 class="title">
+           <a href="https://codepen.io/jrck/full/raMrOLz">
+            Software Development
+            <i class="feather-arrow-left">
+            </i>
+           </a>
+          </h4>
+         </div>
         </div>
-        <!-- End Modal Portfolio area -->
-	
-        <!-- Back to  top Start -->
-        <div class="backto-top">
-            <div>
-                <i data-feather="arrow-up"></i>
-            </div>
-        </div>
-        <!-- Start Contact section -->
-        <div class="rn-contact-area rn-section-gap section-separator" id="contacts">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-center">
-                            <span class="subtitle">Contact</span>
-                            <h2 class="title">Contact With Me</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mt--50 mt_md--40 mt_sm--40 mt-contact-sm">
-                    <div class="col-lg-5">
-                        <div class="contact-about-area">
-                            <div class="thumbnail">
-                            </div>
-                            <div class="title-area">
-							<h4 class="title">Yuri Dev</h4>
-                                <span>Web Developer</span>
-                            </div>
-                            <div class="description">
-                                <p>Whether you have a question, want to start a project or simply want to connect. Feel free to send me a message in the contact form.
-                                </p>
-								<ul class="about-skill-style mb--40">
-								<li><i data-feather="check"></i><span>Web Design Full stack
-                                </span></li>
-                                <li><i data-feather="check"></i><span>24/7 Support
-                                </span></li>
-                                <li><i data-feather="check"></i><span>Unlimited Revisions
-                                </span></li>
-                                </ul>
-								</div>
-                            <div class="social-area">
-                                <div class="name">FIND ME</div>
-                                <div class="social-icone">
-                                    <a href="https://codepen.io/jrck"><i class="fa-brands fa-codepen"></i></a>
-                                    <a href="https://www.linkedin.com/in/jurijsrck"><i class="fa-brands fa-linkedin"></i></a>
-                                    <a href="https://github.com/mscbuild"><i class="fa-brands fa-github"></i></a>
-									<a href="https://behance.net/bitkoins"><i class="fa-brands fa-behance"></i></a>
-									<ul class="about-skill-style mb--40">
-                                 </ul>
-							   </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-aos-delay="600" class="col-lg-7 contact-input">
-					<div class="contact-form-wrapper">
-                    <div class="introduce">
-	<!-- In the second section we will have our contact form -->
-	<form method="POST" id="form">Name
-    <input type="hidden" name="access_key" value="e4fb776d-e6d3-436b-873f-d74e87cd5d26">
-    <input type="text" name="name" required>Email
-    <input type="email" name="email" required>Text
-	<textarea name="message" required></textarea>
-	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-	<div class="honeypot">
-    <label for="honeypot">Поле для ботов (не заполняйте):</label>
-    <input type="text" id="honeypot" name="honeypot" value="">
-	 </div>
-	 <!-- Submit Button -->
-    <button name="submit" type="submit" id="submit" class="rn-btn">
-                                            <span>SEND MESSAGE</span>
-                                            <i data-feather="arrow-right"></i>
-                                        </button>
-                               <!-- Result placeholder -->
-                            <div id="result"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+       </div>
+      </div>
+      <!-- End Single Portfolio  -->
+     </div>
     </div>
-</div>
-<script>
-(function() {
+    <div class="mt--40 text-center margin-t-20">
+     <a class="rn-btn rbbtn rn-single btn-medium shadow-has" href="portf.html">
+      See More
+     </a>
+    </div>
+   </div>
+   <!-- End portfolio Area -->
+   <!-- Modal Portfolio Body area Start -->
+   <div aria-hidden="true" class="modal fade" id="exampleModalCenter" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+     <div class="modal-content">
+      <div class="modal-header">
+       <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
+        <span aria-hidden="true">
+         <i data-feather="x">
+         </i>
+        </span>
+       </button>
+      </div>
+      <div class="modal-body">
+       <div class="row align-items-center">
+        <div class="col-lg-6">
+         <div class="portfolio-popup-thumbnail">
+          <div class="image">
+           <img alt="slide" class="w-100" src="assets/img/dev-21.png"/>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="text-content">
+          <h3>
+           <span>
+            Featured - Design
+           </span>
+           Website Design Development.
+          </h3>
+          <p class="mb--30">
+           Development of a complex design solution for an e-commerce platform aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages &mdash; from market research to creation of final UI layouts and prototypes.
+          </p>
+          <p>
+           <b>
+            *Achieved results:
+           </b>
+          </p>
+          <p>
+           Positive feedback from users about the simplicity and convenience of the interface, 10% reduction in cancellations, visibility in search systems. The product complies with technical requirements and quality standards.
+          </p>
+          <p>
+           <b>
+            *Technology Stack:
+           </b>
+          </p>
+          <p>
+           &middot; Figma
+          </p>
+          <div class="button-group mt--20">
+           <a class="rn-btn thumbs-icon" href="https://www.behance.net/gallery/228404099/E-commerce-bussiness-design">
+            <span>
+             LIKE THIS
+            </span>
+            <i data-feather="thumbs-up">
+            </i>
+           </a>
+           <a class="rn-btn" href="https://www.behance.net/gallery/228404099/E-commerce-bussiness-design">
+            <span>
+             VIEW PROJECT
+            </span>
+            <i data-feather="chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <!-- End of .text-content -->
+        </div>
+       </div>
+       <!-- End of .row Body-->
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- End Modal Portfolio area -->
+   <!-- Modal Portfolio Body area Start-1 -->
+   <div aria-hidden="true" class="modal fade" id="exampleModalCenter-1" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+     <div class="modal-content">
+      <div class="modal-header">
+       <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
+        <span aria-hidden="true">
+         <i data-feather="x">
+         </i>
+        </span>
+       </button>
+      </div>
+      <div class="modal-body">
+       <div class="row align-items-center">
+        <div class="col-lg-6">
+         <div class="portfolio-popup-thumbnail">
+          <div class="image">
+           <img alt="slide" class="w-100" src="assets/img/dev-7.png"/>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="text-content">
+          <h3>
+           <span>
+            Featured - Design
+           </span>
+           Website Design Development.
+          </h3>
+          <p>
+           <b>
+            Strategy &middot; UI/UX Design &middot; Art Direction &middot; Web Development
+           </b>
+          </p>
+          <p class="mb--30">
+           Developing a comprehensive design solution for a highly effective, professional, and memorable portfolio website that maximizes the chances of achieving professional goals: attracting target clients, getting a job, or increasing personal brand awareness.
+          </p>
+          <p>
+           <b>
+            *Achieved results:
+           </b>
+          </p>
+          <p>
+           The design is perceived as professional, in line with modern trends, and reflective of the personal brand, adaptive design, unique animations, interactive elements. Positive User Experience (UX): More than 80% of test users easily find the information.
+          </p>
+          <p>
+           <b>
+            *Technology Stack:
+           </b>
+          </p>
+          <p>
+           Next.js &middot; React &middot; TypeScript &middot; Tailwind CSS &middot; Framer Motion &middot; Responsive Design
+          </p>
+          <div class="button-group mt--20">
+           <a class="rn-btn thumbs-icon" href="#">
+            <span>
+             LIKE THIS
+            </span>
+            <i data-feather="thumbs-up">
+            </i>
+           </a>
+           <a class="rn-btn" href="https://mysite-roan-xi.vercel.app">
+            <span>
+             VIEW PROJECT
+            </span>
+            <i data-feather="chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <!-- End of .text-content -->
+        </div>
+       </div>
+       <!-- End of .row Body-->
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- End Modal Portfolio area -->
+   <!-- Modal Portfolio Body area Start -3 -->
+   <div aria-hidden="true" class="modal fade" id="exampleModalCenter-3" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+     <div class="modal-content">
+      <div class="modal-header">
+       <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
+        <span aria-hidden="true">
+         <i data-feather="x">
+         </i>
+        </span>
+       </button>
+      </div>
+      <div class="modal-body">
+       <div class="row align-items-center">
+        <div class="col-lg-6">
+         <div class="portfolio-popup-thumbnail">
+          <div class="image">
+           <img alt="slide" class="w-100" src="assets/img/dev-5.png"/>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-6">
+         <div class="text-content">
+          <h3>
+           <span>
+            Featured - Design
+           </span>
+           Website Design Development.
+          </h3>
+          <p class="mb--30">
+           Development of a complex design solution for an restaraunt aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages &mdash; from market research to creation of final UI layouts and prototypes.
+          </p>
+          <p>
+           <b>
+            *Achieved results:
+           </b>
+          </p>
+          <p>
+           Fully responsive design, streamlined checkout process, product filtering system, wishlist functionality, and integrated customer reviews. 40% increase in conversion rate, 25% reduction in bounce rate, and significant improvement in average order value within the first 3 months of launch.
+          </p>
+          <p>
+           <b>
+            *Technology Stack:
+           </b>
+          </p>
+          <p>
+           HTML5 &middot; CSS3 &middot; JavaScript &middot; SCSS &middot; Bootstrap &middot; Responsive Design
+          </p>
+          <div class="button-group mt--20">
+           <a class="rn-btn thumbs-icon" href="https://mscbuild.github.io/restaurant-website/">
+            <span>
+             LIKE THIS
+            </span>
+            <i data-feather="thumbs-up">
+            </i>
+           </a>
+           <a class="rn-btn" href="https://mscbuild.github.io/restaurant-website/">
+            <span>
+             VIEW PROJECT
+            </span>
+            <i data-feather="chevron-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <!-- End of .text-content -->
+        </div>
+       </div>
+       <!-- End of .row Body-->
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- End Modal Portfolio area -->
+   <!-- Back to  top Start -->
+   <div class="backto-top">
+    <div>
+     <i data-feather="arrow-up">
+     </i>
+    </div>
+   </div>
+   <!-- Start Contact section -->
+   <div class="rn-contact-area rn-section-gap section-separator" id="contacts">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-12">
+       <div class="section-title text-center">
+        <span class="subtitle">
+         Contact
+        </span>
+        <h2 class="title">
+         Contact With Me
+        </h2>
+       </div>
+      </div>
+     </div>
+     <div class="row mt--50 mt_md--40 mt_sm--40 mt-contact-sm">
+      <div class="col-lg-5">
+       <div class="contact-about-area">
+        <div class="thumbnail">
+        </div>
+        <div class="title-area">
+         <h4 class="title">
+          Yuri Dev
+         </h4>
+         <span>
+          Web Developer
+         </span>
+        </div>
+        <div class="description">
+         <p>
+          Whether you have a question, want to start a project or simply want to connect. Feel free to send me a message in the contact form.
+         </p>
+         <ul class="about-skill-style mb--40">
+          <li>
+           <i data-feather="check">
+           </i>
+           <span>
+            Web Design Full stack
+           </span>
+          </li>
+          <li>
+           <i data-feather="check">
+           </i>
+           <span>
+            24/7 Support
+           </span>
+          </li>
+          <li>
+           <i data-feather="check">
+           </i>
+           <span>
+            Unlimited Revisions
+           </span>
+          </li>
+         </ul>
+        </div>
+        <div class="social-area">
+         <div class="name">
+          FIND ME
+         </div>
+         <div class="social-icone">
+          <a href="https://codepen.io/jrck">
+           <i class="fa-brands fa-codepen">
+           </i>
+          </a>
+          <a href="https://www.linkedin.com/in/jurijsrck">
+           <i class="fa-brands fa-linkedin">
+           </i>
+          </a>
+          <a href="https://github.com/mscbuild">
+           <i class="fa-brands fa-github">
+           </i>
+          </a>
+          <a href="https://behance.net/bitkoins">
+           <i class="fa-brands fa-behance">
+           </i>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-7 contact-input" data-aos-delay="600">
+       <div class="contact-form-wrapper">
+        <div class="introduce">
+         <!-- In the second section we will have our contact form -->
+         <form id="form" method="POST">
+          Name
+          <input name="access_key" type="hidden" value="e4fb776d-e6d3-436b-873f-d74e87cd5d26"/>
+          <input name="name" required="" type="text"/>
+          Email
+          <input name="email" required="" type="email"/>
+          Text
+          <textarea name="message" required=""></textarea>
+          <input class="hidden" name="botcheck" type="checkbox"/>
+          <div class="honeypot">
+           <label for="honeypot">
+            &Pcy;&ocy;&lcy;&iecy; &dcy;&lcy;&yacy; &bcy;&ocy;&tcy;&ocy;&vcy; (&ncy;&iecy; &zcy;&acy;&pcy;&ocy;&lcy;&ncy;&yacy;&jcy;&tcy;&iecy;):
+           </label>
+           <input id="honeypot" name="honeypot" type="text" value=""/>
+          </div>
+          <!-- Submit Button -->
+          <button class="rn-btn" id="submit" name="submit" type="submit">
+           <span>
+            SEND MESSAGE
+           </span>
+           <i data-feather="arrow-right">
+           </i>
+          </button>
+          <!-- Result placeholder -->
+          <div id="result">
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script>
+    (function() {
   'use strict';
 
   // === Настройки ===
@@ -893,17 +1221,25 @@
       e.preventDefault();
       e.stopPropagation();
 
-      // 1. Rate limiting
+      // 1. Honeypot check
+      const honeypot = form.querySelector('#honeypot');
+      if (honeypot && honeypot.value.trim() !== '') {
+        result.textContent = 'Unable to send the message.';
+        result.style.display = 'block';
+        return;
+      }
+
+      // 2. Rate limiting
       if (isRateLimited()) {
         alert(`Please wait ${RATE_LIMIT_WINDOW} seconds before resending.`);
         return;
       }
 
-      // 2. Resetting errors
+      // 3. Resetting errors
       if (nameInput) nameInput.setCustomValidity('');
       if (messageInput) messageInput.setCustomValidity('');
 
-      // 3. Content Check
+      // 4. Content Check
       let valid = true;
       if (nameInput && isMeaningless(nameInput.value, 'name')) {
         nameInput.setCustomValidity('Please enter your real name (minimum 2 characters, including letters)).');
@@ -914,13 +1250,13 @@
         valid = false;
       }
         
-      // 4. Standard browser validation
+      // 5. Standard browser validation
       if (!form.checkValidity() || !valid) {
         form.classList.add('was-validated');
         return;
       }
      
-      // 5. Locking the button and preparing for shipment
+      // 6. Locking the button and preparing for sending
       if (submitBtn) {
         submitBtn.disabled = true;
         const span = submitBtn.querySelector('span');
@@ -929,7 +1265,7 @@
       result.innerHTML = 'Please wait...';
       result.style.display = 'block';
 
-      // 6. Sending  
+      // 7. Sending  
       const formData = new FormData(form);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
@@ -972,61 +1308,38 @@
     });
   }, false);
 })();
-</script>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-	<div class="copyright text-center ptb--40 section-separator">
-              © 2026.All rights reserved
-                <span class="separator"></span>
-                
-          </div>
-	</div>
-        <!-- End Contuct section -->
-    </main>
-
-    <!-- JS ============================================ -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/modernizer.min.js"></script>
-    <script src="assets/js/feather.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/text-type.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/particles.js"></script>
-    <script src="assets/js/jquery-one-page-nav.js"></script>
-	<!-- main JS -->
-    <script src="assets/js/main.js"></script>
-	<!-- References for the optional jQuery function form to enhance end-user prompts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <?--[if gte IE 5[><script type="text/javascript">
-    createPopup().show(0,0,0,0,0);
-    </script><![endif]-->
-    <body oncontextmenu="return false;">
-    <script>
-        // Дополнительно можно добавить проверку на стороне JavaScript
-        document.querySelector('form').addEventListener('submit', function(event) {
-            const honeypot = document.getElementById('honeypot').value;
-            if (honeypot) {
-                // Если поле не пустое, скорее всего, это бот
-                alert("Вы бот!");
-                event.preventDefault(); // Останавливаем отправку формы
-            }
-        });
-    </script>
-	<script>
-		// Dynamic greeting based on time
-        const hour = new Date().getHours();
-        let greeting = 'Welcome';
-        if (hour < 12) greeting = 'Good Morning';
-        else if (hour < 18) greeting = 'Good Afternoon';
-        else greeting = 'Good Evening';
-
-        console.log(`${greeting}! Welcome to personal page.`);
-	</script>
-       </body>
+   </script>
+   <div class="copyright text-center ptb--40 section-separator">
+    &copy; 2026.All rights reserved
+    <span class="separator">
+    </span>
+   </div>
+   <!-- End Contuct section -->
+  </main>
+  <!-- JS ============================================ -->
+  <script src="assets/js/jquery.js">
+  </script>
+  <script src="assets/js/bootstrap.js">
+  </script>
+  <script src="assets/js/modernizer.min.js">
+  </script>
+  <script src="assets/js/feather.min.js">
+  </script>
+  <script src="assets/js/slick.min.js">
+  </script>
+  <script src="assets/js/text-type.js">
+  </script>
+  <script src="assets/js/wow.js">
+  </script>
+  <script src="assets/js/aos.js">
+  </script>
+  <script src="assets/js/particles.js">
+  </script>
+  <script src="assets/js/jquery-one-page-nav.js">
+  </script>
+  <!-- main JS -->
+  <script src="assets/js/main.js">
+  </script>
+  <!-- References for the optional jQuery function form to enhance end-user prompts -->
+</body>
 </html>
