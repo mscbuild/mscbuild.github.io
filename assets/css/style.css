@@ -12927,7 +12927,7 @@ figcaption {
 .slide .thumbnail .inner img {
   border: 0;
   vertical-align: middle;
-  max-width: 140%;
+  max-width: auto;
   height: auto;
 }
 .slide .thumbnail.box-gradient::before {
