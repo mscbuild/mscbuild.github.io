@@ -472,6 +472,55 @@ var {
             padding: 6px 14px;
             font-size: 13px;
         }
+ /* Consent checkbox styling */
+        .consent-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        .consent-wrapper input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            cursor: pointer;
+            accent-color: #ff014f;
+            flex-shrink: 0;
+        }
+        .consent-wrapper label {
+            color: #c4cfde;
+            font-size: 14px;
+            line-height: 1.5;
+            cursor: pointer;
+            user-select: none;
+        }
+        .consent-wrapper label a {
+            color: #ff014f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .consent-wrapper label a:hover {
+            color: #ff2e6e;
+            text-decoration: underline;
+        }
+        .consent-wrapper.error {
+            border-color: #ff014f;
+            background: rgba(255, 1, 79, 0.05);
+        }
+        .consent-error-msg {
+            display: none;
+            color: #ff014f;
+            font-size: 12px;
+            margin-top: 5px;
+            margin-left: 28px;
+        }
+        .consent-error-msg.show {
+            display: block;
+        }
 /*---------------------------
 	List Style 
 ---------------------------*/
