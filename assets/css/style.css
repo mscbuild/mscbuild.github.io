@@ -435,7 +435,43 @@ cite,
 var {
   font-family: "Poppins", sans-serif;
 }
-
+ /* Language switcher */
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            margin: 0 10px;
+            gap: 4px;
+        }
+        .lang-switcher button {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #c4cfde;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .lang-switcher button:hover {
+            color: #fff;
+            border-color: #ff014f;
+        }
+        .lang-switcher button.active {
+            background: #ff014f;
+            color: #fff;
+            border-color: #ff014f;
+        }
+        .header-mob-menu .lang-switcher {
+            margin: 15px 0;
+            justify-content: flex-start;
+        }
+        .header-mob-menu .lang-switcher button {
+            padding: 6px 14px;
+            font-size: 13px;
+        }
 /*---------------------------
 	List Style 
 ---------------------------*/
