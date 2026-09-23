@@ -952,9 +952,13 @@
 		<!-- Consent checkbox for data processing -->
 	 <div class="consent-wrapper" id="consentWrapper">
 	 <input type="checkbox" id="consentCheckbox" name="consent" required>
-	 <label for="consentCheckbox" data-i18n="form.consent"> I agree to the processing of my personal data in accordance with the  privacy policy</label>
-	 <a href="#" class="privacy-link" id="openPrivacyModal"><span data-i18n="form.read_privacy">Read the Privacy Policy</span></a>
-	 </div>
+	<label for="consentCheckbox" data-i18n="form.consent">
+    I agree to the processing of my personal data in accordance with the privacy policy
+    <a href="#" class="privacy-link" id="openPrivacyModal">
+    <span data-i18n="form.read_privacy">Privacy Policy</span>
+    </a>
+</label>
+
 	 <div class="consent-error-msg" id="consentError" data-i18n="form.consent_error">Please confirm your consent to data processing</div>
 	 <!-- Submit Button -->
     <button name="submit" type="submit" id="submit" class="rn-btn">
