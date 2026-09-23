@@ -933,6 +933,12 @@
     <label for="honeypot" data-i18n="form.honeypot">Field for bots (do not fill):</label>
     <input type="text" id="honeypot" name="honeypot" value="">
 	 </div>
+		<!-- Consent checkbox for data processing -->
+	 <div class="consent-wrapper" id="consentWrapper">
+	 <input type="checkbox" id="consentCheckbox" name="consent" required>
+	 <label for="consentCheckbox" data-i18n="form.consent">I agree to the processing of my personal data in accordance with the privacy policy</label>
+	 </div>
+	 <div class="consent-error-msg" id="consentError" data-i18n="form.consent_error">Please confirm your consent to data processing</div>
 	 <!-- Submit Button -->
     <button name="submit" type="submit" id="submit" class="rn-btn">
                                             <span data-i18n="form.send">SEND MESSAGE</span>
@@ -1032,6 +1038,9 @@
     const nameInput = form.querySelector('input[name="name"]');
     const messageInput = form.querySelector('textarea[name="message"]');
     const submitBtn = form.querySelector('button[type="submit"]');
+    const consentCheckbox = document.getElementById('consentCheckbox');
+    const consentWrapper = document.getElementById('consentWrapper');
+    const consentError = document.getElementById('consentError');
 
     // Field validation on loss of focus
     const validateField = (input, type) => {
@@ -1046,6 +1055,16 @@
 
     if (nameInput) nameInput.addEventListener('blur', () => validateField(nameInput, 'name'));
     if (messageInput) messageInput.addEventListener('blur', () => validateField(messageInput, 'message'));
+
+    // Consent checkbox validation
+    if (consentCheckbox) {
+      consentCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+          consentWrapper.classList.remove('error');
+          consentError.classList.remove('show');
+        }
+      });
+    }
 
     // Processing the shipment
     form.addEventListener('submit', async function(e) {
@@ -1072,14 +1091,24 @@
         messageInput.setCustomValidity('Please write a meaningful message.');
         valid = false;
       }
+
+      // 4. Consent checkbox check
+      if (consentCheckbox && !consentCheckbox.checked) {
+        consentWrapper.classList.add('error');
+        consentError.classList.add('show');
+        valid = false;
+      } else if (consentWrapper) {
+        consentWrapper.classList.remove('error');
+        consentError.classList.remove('show');
+      }
         
-      // 4. Standard browser validation
+      // 5. Standard browser validation
       if (!form.checkValidity() || !valid) {
         form.classList.add('was-validated');
         return;
       }
      
-      // 5. Locking the button and preparing for shipment
+      // 6. Locking the button and preparing for shipment
       if (submitBtn) {
         submitBtn.disabled = true;
         const span = submitBtn.querySelector('span');
@@ -1088,7 +1117,7 @@
       result.innerHTML = 'Please wait...';
       result.style.display = 'block';
 
-      // 6. Sending  
+      // 7. Sending  
       const formData = new FormData(form);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
@@ -1277,6 +1306,8 @@
                 'form.email': 'Email',
                 'form.text': 'Text',
                 'form.honeypot': 'Field for bots (do not fill):',
+				'form.consent': 'I agree to the processing of my personal data in accordance with the privacy policy',
+				'form.consent_error': 'Please confirm your consent to data processing',
                 'form.send': 'SEND MESSAGE',
                 'footer.rights': '© 2026.All rights reserved'
             },
@@ -1373,6 +1404,8 @@
                 'form.email': 'E-pasts',
                 'form.text': 'Teksts',
                 'form.honeypot': 'Lauks botiem (neaizpildiet):',
+				'form.consent': 'Es piekrītu savu personas datu apstrādei saskaņā ar privātuma politiku',
+                'form.consent_error': 'Lūdzu, apstipriniet piekrišanu datu apstrādei',
                 'form.send': 'NOSŪTĪT ZIŅU',
                 'footer.rights': '© 2026.Visas tiesības aizsargātas'
             },
@@ -1469,6 +1502,8 @@
                 'form.email': 'Email',
                 'form.text': 'Текст',
                 'form.honeypot': 'Поле для ботов (не заполняйте):',
+				'form.consent': 'Я согласен на обработку моих персональных данных в соответствии с политикой конфиденциальности',
+                'form.consent_error': 'Пожалуйста, подтвердите согласие на обработку данных',
                 'form.send': 'ОТПРАВИТЬ СООБЩЕНИЕ',
                 'footer.rights': '© 2026.Все права защищены'
             }
