@@ -37,6 +37,43 @@
         .honeypot {
             display: none;
         }
+        /* Language switcher */
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            margin: 0 10px;
+            gap: 4px;
+        }
+        .lang-switcher button {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #c4cfde;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .lang-switcher button:hover {
+            color: #fff;
+            border-color: #ff014f;
+        }
+        .lang-switcher button.active {
+            background: #ff014f;
+            color: #fff;
+            border-color: #ff014f;
+        }
+        .header-mob-menu .lang-switcher {
+            margin: 15px 0;
+            justify-content: flex-start;
+        }
+        .header-mob-menu .lang-switcher button {
+            padding: 6px 14px;
+            font-size: 13px;
+        }
     </style>
    </head>
 
@@ -60,43 +97,24 @@
                     <nav id="sideNav" class="mainmenu-nav navbar-example2 d-none d-xl-block onepagenav">
                         <!-- Start Mainmanu Nav -->
                         <ul class="primary-menu nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link smoth-animation" href="#about">About</a></li>
-                            <li class="nav-item"><a class="nav-link smoth-animation" href="#features">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contacts">Contact</a></li>
-							<div class="gtranslate_wrapper"</div>
-                           <style>
-                     .gglobe {
-                                position: relative;
-                                top: 2px;
-						        margin: 10px 5px;
-                                height: 23px;
-                                width: 23px;
-
-
-                        background-image: url('assets/img/lang.svg');
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        opacity: 1;
-                    }
-
-                    .header-mob-menu .gglobe {
-                        margin-left: 8px;
-                        width: 30px;
-                        height: 30px;
-
-                        background-image: url('assets/img/lang.svg');
-                    }
-                </style>
-                <script>window.gtranslateSettings = {"default_language":"en","languages":["en","lv","et","lt","pl","uk","de","ru","sv"],"globe_color":"#ffffff","wrapper_selector":".gtranslate_wrapper","flag_size":24,"globe_size":32}</script>
-                <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
+                            <li class="nav-item"><a class="nav-link" href="#home" data-i18n="nav.home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link smoth-animation" href="#about" data-i18n="nav.about">About</a></li>
+                            <li class="nav-item"><a class="nav-link smoth-animation" href="#features" data-i18n="nav.services">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contacts" data-i18n="nav.contact">Contact</a></li>
+                            <li class="nav-item">
+                                <div class="lang-switcher">
+                                    <button type="button" data-lang="en" class="active">EN</button>
+                                    <button type="button" data-lang="lv">LV</button>
+                                    <button type="button" data-lang="ru">RU</button>
+                                </div>
+                            </li>
 						</ul>
 					   <!-- End Mainmanu Nav -->
                     </nav>
                     <!-- Start Header Right  -->
                     <div class="header-right">
-                        <a class="rn-btn" href="#contacts"><span>HIRE ME</span></a>
+                        <a class="rn-btn" href="#contacts"><span data-i18n="header.hireme">HIRE ME</span></a>
                         <div class="hamberger-menu d-block d-xl-none">
                             <i id="menuBtn" class="fas fa-bars humberger-menu"></i>
                         </div>
@@ -126,16 +144,22 @@
                    </div>
             <div class="content">
                 <ul class="primary-menu nav nav-pills onepagenav">
-                     <li class="nav-item current"><a class="nav-link smoth-animation active" href="#home">Home</a></li>
-                     <li class="nav-item"><a class="nav-link smoth-animation" href="#about">About</a></li>
-                     <li class="nav-item"><a class="nav-link smoth-animation" href="#features">Services</a></li>
-                     <li class="nav-item"><a class="nav-link smoth-animation" href="#portfolio">Portfolio</a></li>
-                     <li class="nav-item"><a class="nav-link" href="#contacts">Contact</a></li>
-					 <li class="nav-item"><a class="nav-link" href="https://mscbuild.github.io/lv.html">LV</a></li>
+                     <li class="nav-item current"><a class="nav-link smoth-animation active" href="#home" data-i18n="nav.home">Home</a></li>
+                     <li class="nav-item"><a class="nav-link smoth-animation" href="#about" data-i18n="nav.about">About</a></li>
+                     <li class="nav-item"><a class="nav-link smoth-animation" href="#features" data-i18n="nav.services">Services</a></li>
+                     <li class="nav-item"><a class="nav-link smoth-animation" href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#contacts" data-i18n="nav.contact">Contact</a></li>
                 </ul>
+                <div class="header-mob-menu">
+                    <div class="lang-switcher">
+                        <button type="button" data-lang="en" class="active">EN</button>
+                        <button type="button" data-lang="lv">LV</button>
+                        <button type="button" data-lang="ru">RU</button>
+                    </div>
+                </div>
                  <!-- social sharea area -->
                 <div class="social-share-style-1 mt--40">
-                    <span class="title">find me</span>
+                    <span class="title" data-i18n="social.findme">find me</span>
                     <ul class="social-share d-flex liststyle">
                         <li class="facebook"><a href="https://x.com/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook">
                                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
@@ -169,29 +193,29 @@
                         <div class="order-2 order-lg-1 col-lg-7 mt_md--50 mt_sm--50 mt_lg--30">
                             <div class="content">
                                 <div class="inner">
-                                    <span class="subtitle">Welcome to my website</span>
-                                    <h1 class="title">Hi, I’m <span>Yuri Dev</span><br>
+                                    <span class="subtitle" data-i18n="hero.subtitle">Welcome to my website</span>
+                                    <h1 class="title"><span data-i18n="hero.hi">Hi, I'm</span> <span>Yuri Dev</span><br>
                                         <span class="header-caption" id="page-top">
                                             <!-- type headline start-->
                                             <span class="cd-headline clip is-full-width">
-                                                <span>a </span>
+                                                <span data-i18n="hero.a">a </span>
                                                 <!-- ROTATING TEXT -->
                                                 <span class="cd-words-wrapper">
-                                                    <b class="is-visible">Web Developer.</b>
-                                                    <b class="is-hidden">Freelancer.</b>
+                                                    <b class="is-visible" data-i18n="hero.webdev">Web Developer.</b>
+                                                    <b class="is-hidden" data-i18n="hero.freelancer">Freelancer.</b>
                                                 </span>
                                             </span>
                                             <!-- type headline end -->
                                         </span>
                                     </h1>
                                     <div>
-                                        <p class="description">I create beautiful, responsive websites and applications that help businesses grow and succeed in the digital world. I create code to meet specific needs and share my experiences online.</p>
+                                        <p class="description" data-i18n="hero.description">I create beautiful, responsive websites and applications that help businesses grow and succeed in the digital world. I create code to meet specific needs and share my experiences online.</p>
                                     </div>
 								</div>
                              <div class="row">
                                     <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
                                         <div class="social-share-inner-left">
-                                            <span class="title">find me</span>
+                                            <span class="title" data-i18n="social.findme">find me</span>
                                             <ul class="social-share d-flex liststyle">
                                                 <li class="codepen"><a href="https://codepen.io/jrck"><i data-feather="codepen"></i></a>
                                                 </li>
@@ -232,13 +256,13 @@
                     <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true" class="col-lg-7 mt_sm--30">
                         <div class="contant">
                             <div class="section-title text-left">
-                                <span class="subtitle">Visit my portfolio </span>
-                                <h2 class="title">About Me</h2>
+                                <span class="subtitle" data-i18n="about.subtitle">Visit my portfolio </span>
+                                <h2 class="title" data-i18n="about.title">About Me</h2>
                             </div>
-                            <p class="discription">
+                            <p class="discription" data-i18n="about.desc1">
                                 Innovative front-end developer with a passion for crafting responsive, user-centric web experiences. Proficient in HTML, CSS, and JavaScript, with extensive experience in frameworks like Bootstrap, React. Proven ability to design and implement visually appealing, intuitive interfaces that significantly improve user engagement
                             </p>
-                            <p class="discription">
+                            <p class="discription" data-i18n="about.desc2">
                                I help businesses like yours increase visibility, achieve top search rankings, and turn organic traffic into real revenue.
                             </p>
                             
@@ -254,8 +278,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-left" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true">
-                            <span class="subtitle">Services</span>
-                            <h2 class="title">What I Do</h2>
+                            <span class="subtitle" data-i18n="services.subtitle">Services</span>
+                            <h2 class="title" data-i18n="services.title">What I Do</h2>
                         </div>
                     </div>
                 </div>
@@ -269,8 +293,8 @@
                                     <i data-feather="menu"></i>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title"><a href="#">Business Strategy</a></h4>
-                                    <p class="description">I specialize in creating solutions that are not only visually engaging but also align with business goals.</p>
+                                    <h4 class="title"><a href="#" data-i18n="services.s1.title">Business Strategy</a></h4>
+                                    <p class="description" data-i18n="services.s1.desc">I specialize in creating solutions that are not only visually engaging but also align with business goals.</p>
                                     <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -286,8 +310,8 @@
                                      <i data-feather="edit"></i>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title"><a href="#">Development</a></h4>
-                                    <p class="description">Tailored solutions to meet specific business needs, including unique features and functionalities.</p>
+                                    <h4 class="title"><a href="#" data-i18n="services.s2.title">Development</a></h4>
+                                    <p class="description" data-i18n="services.s2.desc">Tailored solutions to meet specific business needs, including unique features and functionalities.</p>
                                     <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -303,8 +327,8 @@
                                     <i data-feather="tv"></i>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title"><a href="#">Design</a></h4>
-                                    <p class="description">I can create minimal & modern web design with lasted web technologies.</p>
+                                    <h4 class="title"><a href="#" data-i18n="services.s3.title">Design</a></h4>
+                                    <p class="description" data-i18n="services.s3.desc">I can create minimal & modern web design with lasted web technologies.</p>
                                     <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -320,8 +344,8 @@
                                     <i data-feather="shield"></i>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title"><a href="#">Website Security</a></h4>
-                                    <p class="description">Implementing security measures to protect websites from cyber threats and data breaches.
+                                    <h4 class="title"><a href="#" data-i18n="services.s4.title">Website Security</a></h4>
+                                    <p class="description" data-i18n="services.s4.desc">Implementing security measures to protect websites from cyber threats and data breaches.
                                     </p>
                                     <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
                                 </div>
@@ -338,8 +362,8 @@
                                     <i data-feather="wifi"></i>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title"><a href="#">SEO</a></h4>
-                                    <p class="description">Implementing strategies to improve website visibility in search engine results.</p>
+                                    <h4 class="title"><a href="#" data-i18n="services.s5.title">SEO</a></h4>
+                                    <p class="description" data-i18n="services.s5.desc">Implementing strategies to improve website visibility in search engine results.</p>
                                     <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -355,8 +379,8 @@
                                     <i data-feather="slack"></i>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title"><a href="#">Maintenance</a></h4>
-                                    <p class="description">Providing ongoing support, updates, and bug fixes to ensure websites run smoothly.</p>
+                                    <h4 class="title"><a href="#" data-i18n="services.s6.title">Maintenance</a></h4>
+                                    <p class="description" data-i18n="services.s6.desc">Providing ongoing support, updates, and bug fixes to ensure websites run smoothly.</p>
                                     <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -375,8 +399,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center">
-                            <span class="subtitle">Visit my portfolio and keep your feedback</span>
-                            <h2 class="title">My Portfolio</h2>
+                            <span class="subtitle" data-i18n="portfolio.subtitle">Visit my portfolio and keep your feedback</span>
+                            <h2 class="title" data-i18n="portfolio.title">My Portfolio</h2>
                         </div>
                     </div>
                 </div>
@@ -394,14 +418,14 @@
                                         <div class="content">
                                             <div class="category-info">
                                                 <div class="category-list">
-                                                    <a href="javascript:void(0)">Design</a>
+                                                    <a href="javascript:void(0)" data-i18n="portfolio.cat.design">Design</a>
                                                 </div>
                                                 <div class="meta">
                                                     <span><a href="javascript:void(0)"><i class="fa-solid fa-heart"></i></a>
                                                         650</span>
                                                 </div>
                                             </div>
-                                            <h4 class="title"><a href="javascript:void(0)">Ecommerce Website Design & Services<i
+                                            <h4 class="title"><a href="javascript:void(0)" data-i18n="portfolio.p1.title">Ecommerce Website Design & Services<i
                                                         class="feather-arrow-right"></i></a></h4>
                                         </div>
                                     </div>
@@ -421,14 +445,14 @@
                                         <div class="content">
                                             <div class="category-info">
                                                 <div class="category-list">
-                                                    <a href="javascript:void(0)">Web Design</a>
+                                                    <a href="javascript:void(0)" data-i18n="portfolio.cat.webdesign">Web Design</a>
                                                 </div>
                                                 <div class="meta">
                                                     <span><a href="javascript:void(0)"><i class="fa-solid fa-heart"></i></a>
                                                         600</span>
                                                 </div>
                                             </div>
-                                            <h4 class="title"><a href="javascript:void(0)">Responsive Nextjs website using Tailwind<i
+                                            <h4 class="title"><a href="javascript:void(0)" data-i18n="portfolio.p2.title">Responsive Nextjs website using Tailwind<i
                                                         class="feather-arrow-right"></i></a></h4>
                                         </div>
                                     </div>
@@ -448,14 +472,14 @@
                                         <div class="content">
                                             <div class="category-info">
                                                 <div class="category-list">
-                                                    <a href="javascript:void(0)">Design</a>
+                                                    <a href="javascript:void(0)" data-i18n="portfolio.cat.design">Design</a>
                                                 </div>
                                                 <div class="meta">
                                                     <span><a href="javascript:void(0)"><i class="fa-solid fa-heart"></i></a>
                                                         700</span>
                                                 </div>
                                             </div>
-                                            <h4 class="title"><a href="javascript:void(0)">Responsive Restaurant Website<i
+                                            <h4 class="title"><a href="javascript:void(0)" data-i18n="portfolio.p3.title">Responsive Restaurant Website<i
                                                         class="feather-arrow-right"></i></a></h4>
                                         </div>
                                     </div>
@@ -475,14 +499,14 @@
                                         <div class="content">
                                             <div class="category-info">
                                                 <div class="category-list">
-                                                    <a href="https://mscbuild.github.io/about/neon.html">Web Design</a>
+                                                    <a href="https://mscbuild.github.io/about/neon.html" data-i18n="portfolio.cat.webdesign">Web Design</a>
                                                 </div>
                                                 <div class="meta">
                                                     <span><a href="#"><i class="fa-solid fa-heart"></i></a>
                                                         760</span>
                                                 </div>
                                             </div>
-                                            <h4 class="title"><a href="https://mscbuild.github.io/about/neon.html">Beautiful Animated 3D Websites<i
+                                            <h4 class="title"><a href="https://mscbuild.github.io/about/neon.html" data-i18n="portfolio.p4.title">Beautiful Animated 3D Websites<i
                                                         class="feather-arrow-right"></i></a></h4>
                                         </div>
                                     </div>
@@ -503,14 +527,14 @@
                                         <div class="content">
                                             <div class="category-info">
                                                 <div class="category-list">
-                                                    <a href="https://mscbuild.github.io/about/agent.html">Development</a>
+                                                    <a href="https://mscbuild.github.io/about/agent.html" data-i18n="portfolio.cat.development">Development</a>
                                                 </div>
                                                 <div class="meta">
                                                     <span><a href="#"><i class="fa-solid fa-heart"></i></a>
                                                        500</span>
                                                 </div>
                                             </div>
-                                            <h4 class="title"><a href="https://mscbuild.github.io/about/agent.html">Creating and deploying AI agents<i
+                                            <h4 class="title"><a href="https://mscbuild.github.io/about/agent.html" data-i18n="portfolio.p5.title">Creating and deploying AI agents<i
                                                         class="feather-arrow-left"></i></a></h4>
                                         </div>
                                     </div>
@@ -529,14 +553,14 @@
                                         <div class="content">
                                             <div class="category-info">
                                                 <div class="category-list">
-                                                    <a href="https://codepen.io/jrck/full/raMrOLz">Development</a>
+                                                    <a href="https://codepen.io/jrck/full/raMrOLz" data-i18n="portfolio.cat.development">Development</a>
                                                 </div>
                                                 <div class="meta">
                                                     <span><a href="https://codepen.io/jrck/full/raMrOLz"><i class="fa-solid fa-heart"></i></a>
                                                        750</span>
                                                 </div>
                                             </div>
-                                                   <h4 class="title"><a href="https://codepen.io/jrck/full/raMrOLz">Software Development<i   
+                                                   <h4 class="title"><a href="https://codepen.io/jrck/full/raMrOLz" data-i18n="portfolio.p6.title">Software Development<i   
                                                         class="feather-arrow-left"></i></a></h4>
                                         </div>
                                     </div>
@@ -546,7 +570,7 @@
 						 </div>
                     </div>
 			  <div class="mt--40 text-center margin-t-20">
-                   <a class="rn-btn rbbtn rn-single btn-medium  shadow-has" href="portf.html"> See More</a>
+                   <a class="rn-btn rbbtn rn-single btn-medium  shadow-has" href="portf.html" data-i18n="portfolio.seemore"> See More</a>
 				 </div>
             </div>
 		 </div>
@@ -575,20 +599,20 @@
                             <div class="col-lg-6">
                                 <div class="text-content">
                                     <h3>
-                                        <span>Featured - Design</span> Website Design Development.
+                                        <span data-i18n="modal.featured">Featured - Design</span> <span data-i18n="modal.p1.heading">Website Design Development.</span>
                                     </h3>
-                                    <p class="mb--30">Development of a complex design solution for an e-commerce platform aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages — from market research to creation of final UI layouts and prototypes.</p>
-									<p><b>*Achieved results:</b></p>
-								    <p>Positive feedback from users about the simplicity and convenience of the interface, 10% reduction in cancellations, visibility in search systems. The product complies with technical requirements and quality standards.</p> 
-									<p><b>*Technology Stack:</b></p>
+                                    <p class="mb--30" data-i18n="modal.p1.desc1">Development of a complex design solution for an e-commerce platform aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages — from market research to creation of final UI layouts and prototypes.</p>
+									<p><b data-i18n="modal.results">*Achieved results:</b></p>
+								    <p data-i18n="modal.p1.results">Positive feedback from users about the simplicity and convenience of the interface, 10% reduction in cancellations, visibility in search systems. The product complies with technical requirements and quality standards.</p> 
+									<p><b data-i18n="modal.stack">*Technology Stack:</b></p>
 									<p>· Figma</p>
 									<div class="button-group mt--20">
                                         <a href="https://www.behance.net/gallery/228404099/E-commerce-bussiness-design" class="rn-btn thumbs-icon">
-                                            <span>LIKE THIS</span>
+                                            <span data-i18n="modal.like">LIKE THIS</span>
                                             <i data-feather="thumbs-up"></i>
 											</a>
                                         <a href="https://www.behance.net/gallery/228404099/E-commerce-bussiness-design" class="rn-btn">
-                                            <span>VIEW PROJECT</span>
+                                            <span data-i18n="modal.view">VIEW PROJECT</span>
                                             <i data-feather="chevron-right"></i>
                                         </a>
                                     </div>
@@ -627,21 +651,21 @@
                             <div class="col-lg-6">
                                 <div class="text-content">
                                     <h3>
-                                        <span>Featured - Design</span> Website Design Development.
+                                        <span data-i18n="modal.featured">Featured - Design</span> <span data-i18n="modal.p1.heading">Website Design Development.</span>
                                     </h3>
-									<p><b>Strategy · UI/UX Design · Art Direction · Web Development</b></p>
-                                    <p class="mb--30">Developing a comprehensive design solution for a highly effective, professional, and memorable portfolio website that maximizes the chances of achieving professional goals: attracting target clients, getting a job, or increasing personal brand awareness.</p>
-									<p><b>*Achieved results:</b></p>
-                                    <p>The design is perceived as professional, in line with modern trends, and reflective of the personal brand, adaptive design, unique animations, interactive elements. Positive User Experience (UX): More than 80% of test users easily find the information.</p> 
-									<p><b>*Technology Stack:</b></p>
-									<p>Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Responsive Design</p>
+									<p><b data-i18n="modal.p2.tags">Strategy · UI/UX Design · Art Direction · Web Development</b></p>
+                                    <p class="mb--30" data-i18n="modal.p2.desc1">Developing a comprehensive design solution for a highly effective, professional, and memorable portfolio website that maximizes the chances of achieving professional goals: attracting target clients, getting a job, or increasing personal brand awareness.</p>
+									<p><b data-i18n="modal.results">*Achieved results:</b></p>
+                                    <p data-i18n="modal.p2.results">The design is perceived as professional, in line with modern trends, and reflective of the personal brand, adaptive design, unique animations, interactive elements. Positive User Experience (UX): More than 80% of test users easily find the information.</p> 
+									<p><b data-i18n="modal.stack">*Technology Stack:</b></p>
+									<p data-i18n="modal.p2.stack">Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Responsive Design</p>
 									<div class="button-group mt--20">
                                         <a href="#" class="rn-btn thumbs-icon">
-                                            <span>LIKE THIS</span>
+                                            <span data-i18n="modal.like">LIKE THIS</span>
                                             <i data-feather="thumbs-up"></i>
                                         </a>
                                         <a href="https://mysite-roan-xi.vercel.app" class="rn-btn">
-                                            <span>VIEW PROJECT</span>
+                                            <span data-i18n="modal.view">VIEW PROJECT</span>
                                             <i data-feather="chevron-right"></i>
                                         </a>
                                     </div>
@@ -680,20 +704,20 @@
                             <div class="col-lg-6">
                                 <div class="text-content">
                                     <h3>
-                                        <span>Featured - Design</span> Website Design Development.
+                                        <span data-i18n="modal.featured">Featured - Design</span> <span data-i18n="modal.p1.heading">Website Design Development.</span>
                                     </h3>
-                                    <p class="mb--30">Development of a complex design solution for an restaraunt aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages — from market research to creation of final UI layouts and prototypes.</p>
-									<p><b>*Achieved results:</b></p>
-                                    <p>Fully responsive design, streamlined checkout process, product filtering system, wishlist functionality, and integrated customer reviews. 40% increase in conversion rate, 25% reduction in bounce rate, and significant improvement in average order value within the first 3 months of launch.</p> 
-									<p><b>*Technology Stack:</b></p>
-									<p>HTML5 · CSS3 · JavaScript · SCSS · Bootstrap · Responsive Design</p>
+                                    <p class="mb--30" data-i18n="modal.p3.desc1">Development of a complex design solution for an restaraunt aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages — from market research to creation of final UI layouts and prototypes.</p>
+									<p><b data-i18n="modal.results">*Achieved results:</b></p>
+                                    <p data-i18n="modal.p3.results">Fully responsive design, streamlined checkout process, product filtering system, wishlist functionality, and integrated customer reviews. 40% increase in conversion rate, 25% reduction in bounce rate, and significant improvement in average order value within the first 3 months of launch.</p> 
+									<p><b data-i18n="modal.stack">*Technology Stack:</b></p>
+									<p data-i18n="modal.p3.stack">HTML5 · CSS3 · JavaScript · SCSS · Bootstrap · Responsive Design</p>
                                     <div class="button-group mt--20">
                                         <a href="https://mscbuild.github.io/restaurant-website/" class="rn-btn thumbs-icon">
-                                            <span>LIKE THIS</span>
+                                            <span data-i18n="modal.like">LIKE THIS</span>
                                             <i data-feather="thumbs-up"></i>
                                         </a>
                                         <a href="https://mscbuild.github.io/restaurant-website/" class="rn-btn">
-                                            <span>VIEW PROJECT</span>
+                                            <span data-i18n="modal.view">VIEW PROJECT</span>
                                             <i data-feather="chevron-right"></i>
                                         </a>
                                     </div>
@@ -721,8 +745,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center">
-                            <span class="subtitle">Contact</span>
-                            <h2 class="title">Contact With Me</h2>
+                            <span class="subtitle" data-i18n="contact.subtitle">Contact</span>
+                            <h2 class="title" data-i18n="contact.title">Contact With Me</h2>
                         </div>
                     </div>
                 </div>
@@ -734,22 +758,22 @@
                             </div>
                             <div class="title-area">
 							<h4 class="title">Yuri Dev</h4>
-                                <span>Web Developer</span>
+                                <span data-i18n="contact.role">Web Developer</span>
                             </div>
                             <div class="description">
-                                <p>Whether you have a question, want to start a project or simply want to connect. Feel free to send me a message in the contact form.
+                                <p data-i18n="contact.desc">Whether you have a question, want to start a project or simply want to connect. Feel free to send me a message in the contact form.
                                 </p>
 								<ul class="about-skill-style mb--40">
-								<li><i data-feather="check"></i><span>Web Design Full stack
+								<li><i data-feather="check"></i><span data-i18n="contact.skill1">Web Design Full stack
                                 </span></li>
-                                <li><i data-feather="check"></i><span>24/7 Support
+                                <li><i data-feather="check"></i><span data-i18n="contact.skill2">24/7 Support
                                 </span></li>
-                                <li><i data-feather="check"></i><span>Unlimited Revisions
+                                <li><i data-feather="check"></i><span data-i18n="contact.skill3">Unlimited Revisions
                                 </span></li>
                                 </ul>
 								</div>
                             <div class="social-area">
-                                <div class="name">FIND ME</div>
+                                <div class="name" data-i18n="social.findme">FIND ME</div>
                                 <div class="social-icone">
                                     <a href="https://codepen.io/jrck"><i class="fa-brands fa-codepen"></i></a>
                                     <a href="https://www.linkedin.com/in/jurijsrck"><i class="fa-brands fa-linkedin"></i></a>
@@ -765,19 +789,19 @@
 					<div class="contact-form-wrapper">
                     <div class="introduce">
 	<!-- In the second section we will have our contact form -->
-	<form method="POST" id="form">Name
-    <input type="hidden" name="access_key" value="e4fb776d-e6d3-436b-873f-d74e87cd5d26">
-    <input type="text" name="name" required>Email
-    <input type="email" name="email" required>Text
+	<form method="POST" id="form"><span data-i18n="form.name">Name</span>
+    <input type="hidden" name="access_key" value="key">
+    <input type="text" name="name" required><span data-i18n="form.email">Email</span>
+    <input type="email" name="email" required><span data-i18n="form.text">Text</span>
 	<textarea name="message" required></textarea>
 	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 	<div class="honeypot">
-    <label for="honeypot">Поле для ботов (не заполняйте):</label>
+    <label for="honeypot" data-i18n="form.honeypot">Field for bots (do not fill):</label>
     <input type="text" id="honeypot" name="honeypot" value="">
 	 </div>
 	 <!-- Submit Button -->
     <button name="submit" type="submit" id="submit" class="rn-btn">
-                                            <span>SEND MESSAGE</span>
+                                            <span data-i18n="form.send">SEND MESSAGE</span>
                                             <i data-feather="arrow-right"></i>
                                         </button>
                                <!-- Result placeholder -->
@@ -981,7 +1005,7 @@
             </div>
         </div>
 	<div class="copyright text-center ptb--40 section-separator">
-              © 2026.All rights reserved
+              <span data-i18n="footer.rights">© 2026.All rights reserved</span>
                 <span class="separator"></span>
                 
           </div>
@@ -1019,6 +1043,298 @@
             }
         });
     </script>
+
+    <!-- Language Switcher Script -->
+    <script>
+    (function() {
+        'use strict';
+
+        const translations = {
+            en: {
+                'nav.home': 'Home',
+                'nav.about': 'About',
+                'nav.services': 'Services',
+                'nav.portfolio': 'Portfolio',
+                'nav.contact': 'Contact',
+                'header.hireme': 'HIRE ME',
+                'social.findme': 'find me',
+                'hero.subtitle': 'Welcome to my website',
+                'hero.hi': 'Hi, I\'m',
+                'hero.a': 'a ',
+                'hero.webdev': 'Web Developer.',
+                'hero.freelancer': 'Freelancer.',
+                'hero.description': 'I create beautiful, responsive websites and applications that help businesses grow and succeed in the digital world. I create code to meet specific needs and share my experiences online.',
+                'about.subtitle': 'Visit my portfolio ',
+                'about.title': 'About Me',
+                'about.desc1': 'Innovative front-end developer with a passion for crafting responsive, user-centric web experiences. Proficient in HTML, CSS, and JavaScript, with extensive experience in frameworks like Bootstrap, React. Proven ability to design and implement visually appealing, intuitive interfaces that significantly improve user engagement',
+                'about.desc2': 'I help businesses like yours increase visibility, achieve top search rankings, and turn organic traffic into real revenue.',
+                'services.subtitle': 'Services',
+                'services.title': 'What I Do',
+                'services.s1.title': 'Business Strategy',
+                'services.s1.desc': 'I specialize in creating solutions that are not only visually engaging but also align with business goals.',
+                'services.s2.title': 'Development',
+                'services.s2.desc': 'Tailored solutions to meet specific business needs, including unique features and functionalities.',
+                'services.s3.title': 'Design',
+                'services.s3.desc': 'I can create minimal & modern web design with lasted web technologies.',
+                'services.s4.title': 'Website Security',
+                'services.s4.desc': 'Implementing security measures to protect websites from cyber threats and data breaches.',
+                'services.s5.title': 'SEO',
+                'services.s5.desc': 'Implementing strategies to improve website visibility in search engine results.',
+                'services.s6.title': 'Maintenance',
+                'services.s6.desc': 'Providing ongoing support, updates, and bug fixes to ensure websites run smoothly.',
+                'portfolio.subtitle': 'Visit my portfolio and keep your feedback',
+                'portfolio.title': 'My Portfolio',
+                'portfolio.cat.design': 'Design',
+                'portfolio.cat.webdesign': 'Web Design',
+                'portfolio.cat.development': 'Development',
+                'portfolio.p1.title': 'Ecommerce Website Design & Services',
+                'portfolio.p2.title': 'Responsive Nextjs website using Tailwind',
+                'portfolio.p3.title': 'Responsive Restaurant Website',
+                'portfolio.p4.title': 'Beautiful Animated 3D Websites',
+                'portfolio.p5.title': 'Creating and deploying AI agents',
+                'portfolio.p6.title': 'Software Development',
+                'portfolio.seemore': ' See More',
+                'modal.featured': 'Featured - Design',
+                'modal.p1.heading': 'Website Design Development.',
+                'modal.p1.desc1': 'Development of a complex design solution for an e-commerce platform aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages — from market research to creation of final UI layouts and prototypes.',
+                'modal.p1.results': 'Positive feedback from users about the simplicity and convenience of the interface, 10% reduction in cancellations, visibility in search systems. The product complies with technical requirements and quality standards.',
+                'modal.results': '*Achieved results:',
+                'modal.stack': '*Technology Stack:',
+                'modal.like': 'LIKE THIS',
+                'modal.view': 'VIEW PROJECT',
+                'modal.p2.tags': 'Strategy · UI/UX Design · Art Direction · Web Development',
+                'modal.p2.desc1': 'Developing a comprehensive design solution for a highly effective, professional, and memorable portfolio website that maximizes the chances of achieving professional goals: attracting target clients, getting a job, or increasing personal brand awareness.',
+                'modal.p2.results': 'The design is perceived as professional, in line with modern trends, and reflective of the personal brand, adaptive design, unique animations, interactive elements. Positive User Experience (UX): More than 80% of test users easily find the information.',
+                'modal.p2.stack': 'Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Responsive Design',
+                'modal.p3.desc1': 'Development of a complex design solution for an restaraunt aimed at improving user experience (UX), sales conversion and brand recognition. The project included all stages — from market research to creation of final UI layouts and prototypes.',
+                'modal.p3.results': 'Fully responsive design, streamlined checkout process, product filtering system, wishlist functionality, and integrated customer reviews. 40% increase in conversion rate, 25% reduction in bounce rate, and significant improvement in average order value within the first 3 months of launch.',
+                'modal.p3.stack': 'HTML5 · CSS3 · JavaScript · SCSS · Bootstrap · Responsive Design',
+                'contact.subtitle': 'Contact',
+                'contact.title': 'Contact With Me',
+                'contact.role': 'Web Developer',
+                'contact.desc': 'Whether you have a question, want to start a project or simply want to connect. Feel free to send me a message in the contact form.',
+                'contact.skill1': 'Web Design Full stack',
+                'contact.skill2': '24/7 Support',
+                'contact.skill3': 'Unlimited Revisions',
+                'form.name': 'Name',
+                'form.email': 'Email',
+                'form.text': 'Text',
+                'form.honeypot': 'Field for bots (do not fill):',
+                'form.send': 'SEND MESSAGE',
+                'footer.rights': '© 2026.All rights reserved'
+            },
+            lv: {
+                'nav.home': 'Sākums',
+                'nav.about': 'Par mani',
+                'nav.services': 'Pakalpojumi',
+                'nav.portfolio': 'Portfolio',
+                'nav.contact': 'Kontakti',
+                'header.hireme': 'ALGOT MANI',
+                'social.findme': 'atrod mani',
+                'hero.subtitle': 'Laipni lūgti manā mājaslapā',
+                'hero.hi': 'Sveiki, esmu',
+                'hero.a': '',
+                'hero.webdev': 'Tīmekļa izstrādātājs.',
+                'hero.freelancer': 'Frīlanseris.',
+                'hero.description': 'Es veidoju skaistas, responsīvas mājaslapas un lietotnes, kas palīdz uzņēmumiem augt un gūt panākumus digitālajā pasaulē. Es rakstu kodu, lai apmierinātu konkrētas vajadzības, un dalos ar savu pieredzi tiešsaistē.',
+                'about.subtitle': 'Apmeklējiet manu portfolio ',
+                'about.title': 'Par mani',
+                'about.desc1': 'Inovatīvs front-end izstrādātājs ar aizrautību veidot responsīvas, uz lietotāju vērstas tīmekļa pieredzes. Pārzinu HTML, CSS un JavaScript, ar plašu pieredzi tādos ietvaros kā Bootstrap, React. Pierādīta spēja projektēt un īstenot vizuāli pievilcīgas, intuitīvas saskarnes, kas ievērojami uzlabo lietotāju iesaisti',
+                'about.desc2': 'Es palīgu tādiem uzņēmumiem kā jūsu palielināt redzamību, sasniegt augstākās pozīcijas meklēšanas rezultātos un pārvērst organisko trafiku reālos ieņēmumos.',
+                'services.subtitle': 'Pakalpojumi',
+                'services.title': 'Ko es daru',
+                'services.s1.title': 'Biznesa stratēģija',
+                'services.s1.desc': 'Es specializējos risinājumu veidošanā, kas ir ne tikai vizuāli saistoši, bet arī atbilst biznesa mērķiem.',
+                'services.s2.title': 'Izstrāde',
+                'services.s2.desc': 'Pielāgoti risinājumi konkrētu biznesa vajadzību apmierināšanai, ieskaitot unikālas funkcijas un iespējas.',
+                'services.s3.title': 'Dizains',
+                'services.s3.desc': 'Es varu izveidot minimālistisku un modernu tīmekļa dizainu ar jaunākajām tīmekļa tehnoloģijām.',
+                'services.s4.title': 'Mājaslapas drošība',
+                'services.s4.desc': 'Drošības pasākumu ieviešana, lai aizsargātu mājaslapas no kibernoziedzības un datu noplūdēm.',
+                'services.s5.title': 'SEO',
+                'services.s5.desc': 'Stratēģiju ieviešana, lai uzlabotu mājaslapas redzamību meklētājprogrammu rezultātos.',
+                'services.s6.title': 'Apkope',
+                'services.s6.desc': 'Nepārtraukta atbalsta, atjauninājumu un kļūdu labojumu nodrošināšana, lai mājaslapas darbotos vienmērīgi.',
+                'portfolio.subtitle': 'Apmeklējiet manu portfolio un atstājiet savas atsauksmes',
+                'portfolio.title': 'Mans portfolio',
+                'portfolio.cat.design': 'Dizains',
+                'portfolio.cat.webdesign': 'Tīmekļa dizains',
+                'portfolio.cat.development': 'Izstrāde',
+                'portfolio.p1.title': 'E-komercijas vietnes dizains un pakalpojumi',
+                'portfolio.p2.title': 'Responsīva Nextjs vietne ar Tailwind',
+                'portfolio.p3.title': 'Responsīva restorāna vietne',
+                'portfolio.p4.title': 'Skaistas animētas 3D vietnes',
+                'portfolio.p5.title': 'MI aģentu izveide un izvietošana',
+                'portfolio.p6.title': 'Programmatūras izstrāde',
+                'portfolio.seemore': ' Skatīt vairāk',
+                'modal.featured': 'Izcelts - Dizains',
+                'modal.p1.heading': 'Mājaslapas dizaina izstrāde.',
+                'modal.p1.desc1': 'Sarežģīta dizaina risinājuma izstrāde e-komercijas platformai, kuras mērķis ir uzlabot lietotāju pieredzi (UX), pārdošanas konversiju un zīmola atpazīstamību. Projekts ietvēra visus posmus — no tirgus izpētes līdz galīgo UI maketu un prototipu izveidei.',
+                'modal.p1.results': 'Pozitīvas lietotāju atsauksmes par saskarnes vienkāršību un ērtumu, 10% samazinājums atteikumos, redzamība meklēšanas sistēmās. Produkts atbilst tehniskajām prasībām un kvalitātes standartiem.',
+                'modal.results': '*Sasniegtie rezultāti:',
+                'modal.stack': '*Tehnoloģiju stack:',
+                'modal.like': 'PATĪK',
+                'modal.view': 'SKATĪT PROJEKTU',
+                'modal.p2.tags': 'Stratēģija · UI/UX dizains · Mākslas virzība · Tīmekļa izstrāde',
+                'modal.p2.desc1': 'Visaptveroša dizaina risinājuma izstrāde ļoti efektīvai, profesionālai un neaizmirstamai portfolio vietnei, kas maksimizē iespējas sasniegt profesionālos mērķus: piesaistīt mērķa klientus, iegūt darbu vai palielināt personīgā zīmola atpazīstamību.',
+                'modal.p2.results': 'Dizains tiek uztverts kā profesionāls, atbilstošs mūsdienu tendencēm un atspoguļo personīgo zīmolu, adaptīvs dizains, unikālas animācijas, interaktīvi elementi. Pozitīva lietotāju pieredze (UX): Vairāk nekā 80% testa lietotāju viegli atrod informāciju.',
+                'modal.p2.stack': 'Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Responsīvs dizains',
+                'modal.p3.desc1': 'Sarežģīta dizaina risinājuma izstrāde restorānam, kuras mērķis ir uzlabot lietotāju pieredzi (UX), pārdošanas konversiju un zīmola atpazīstamību. Projekts ietvēra visus posmus — no tirgus izpētes līdz galīgo UI maketu un prototipu izveidei.',
+                'modal.p3.results': 'Pilnībā responsīvs dizains, racionalizēts pasūtījuma process, produktu filtrēšanas sistēma, vēlmju saraksta funkcionalitāte un integrētas klientu atsauksmes. 40% konversijas pieaugums, 25% atteikumu samazinājums un ievērojams vidējās pasūtījuma vērtības uzlabojums pirmajos 3 mēnešos pēc palaišanas.',
+                'modal.p3.stack': 'HTML5 · CSS3 · JavaScript · SCSS · Bootstrap · Responsīvs dizains',
+                'contact.subtitle': 'Kontakti',
+                'contact.title': 'Sazinieties ar mani',
+                'contact.role': 'Tīmekļa izstrādātājs',
+                'contact.desc': 'Neatkarīgi no tā, vai jums ir jautājums, vēlaties sākt projektu vai vienkārši vēlaties sazināties. Droši nosūtiet man ziņu kontaktformā.',
+                'contact.skill1': 'Tīmekļa dizains Full stack',
+                'contact.skill2': '24/7 Atbalsts',
+                'contact.skill3': 'Neierobežotas revīzijas',
+                'form.name': 'Vārds',
+                'form.email': 'E-pasts',
+                'form.text': 'Teksts',
+                'form.honeypot': 'Lauks botiem (neaizpildiet):',
+                'form.send': 'NOSŪTĪT ZIŅU',
+                'footer.rights': '© 2026.Visas tiesības aizsargātas'
+            },
+            ru: {
+                'nav.home': 'Главная',
+                'nav.about': 'Обо мне',
+                'nav.services': 'Услуги',
+                'nav.portfolio': 'Портфолио',
+                'nav.contact': 'Контакты',
+                'header.hireme': 'НАНЯТЬ МЕНЯ',
+                'social.findme': 'найти меня',
+                'hero.subtitle': 'Добро пожаловать на мой сайт',
+                'hero.hi': 'Привет, я',
+                'hero.a': '',
+                'hero.webdev': 'Веб-разработчик.',
+                'hero.freelancer': 'Фрилансер.',
+                'hero.description': 'Я создаю красивые, адаптивные веб-сайты и приложения, которые помогают бизнесу расти и добиваться успеха в цифровом мире. Я пишу код для удовлетворения конкретных потребностей и делюсь своим опытом в интернете.',
+                'about.subtitle': 'Посетите моё портфолио ',
+                'about.title': 'Обо мне',
+                'about.desc1': 'Инновационный front-end разработчик со страстью к созданию адаптивных, ориентированных на пользователя веб-решений. Владею HTML, CSS и JavaScript, имею обширный опыт работы с такими фреймворками, как Bootstrap, React. Доказанная способность проектировать и внедрять визуально привлекательные, интуитивно понятные интерфейсы, которые значительно повышают вовлечённость пользователей',
+                'about.desc2': 'Я помогаю таким бизнесам, как ваш, увеличить видимость, достичь топовых позиций в поисковой выдаче и превратить органический трафик в реальный доход.',
+                'services.subtitle': 'Услуги',
+                'services.title': 'Чем я занимаюсь',
+                'services.s1.title': 'Бизнес-стратегия',
+                'services.s1.desc': 'Я специализируюсь на создании решений, которые не только визуально привлекательны, но и соответствуют бизнес-целям.',
+                'services.s2.title': 'Разработка',
+                'services.s2.desc': 'Индивидуальные решения для удовлетворения конкретных бизнес-потребностей, включая уникальные функции и возможности.',
+                'services.s3.title': 'Дизайн',
+                'services.s3.desc': 'Я могу создать минималистичный и современный веб-дизайн с использованием новейших веб-технологий.',
+                'services.s4.title': 'Безопасность сайта',
+                'services.s4.desc': 'Внедрение мер безопасности для защиты веб-сайтов от киберугроз и утечек данных.',
+                'services.s5.title': 'SEO',
+                'services.s5.desc': 'Внедрение стратегий для улучшения видимости сайта в результатах поисковых систем.',
+                'services.s6.title': 'Техподдержка',
+                'services.s6.desc': 'Постоянная поддержка, обновления и исправление ошибок для обеспечения бесперебойной работы сайтов.',
+                'portfolio.subtitle': 'Посетите моё портфолио и оставьте свой отзыв',
+                'portfolio.title': 'Моё портфолио',
+                'portfolio.cat.design': 'Дизайн',
+                'portfolio.cat.webdesign': 'Веб-дизайн',
+                'portfolio.cat.development': 'Разработка',
+                'portfolio.p1.title': 'Дизайн и услуги интернет-магазина',
+                'portfolio.p2.title': 'Адаптивный сайт на Nextjs с Tailwind',
+                'portfolio.p3.title': 'Адаптивный сайт ресторана',
+                'portfolio.p4.title': 'Красивые анимированные 3D сайты',
+                'portfolio.p5.title': 'Создание и развёртывание ИИ-агентов',
+                'portfolio.p6.title': 'Разработка программного обеспечения',
+                'portfolio.seemore': ' Смотреть больше',
+                'modal.featured': 'Избранное - Дизайн',
+                'modal.p1.heading': 'Разработка дизайна сайта.',
+                'modal.p1.desc1': 'Разработка комплексного дизайн-решения для платформы электронной коммерции, направленного на улучшение пользовательского опыта (UX), конверсии продаж и узнаваемости бренда. Проект включал все этапы — от исследования рынка до создания финальных UI-макетов и прототипов.',
+                'modal.p1.results': 'Положительные отзывы пользователей о простоте и удобстве интерфейса, снижение отказов на 10%, видимость в поисковых системах. Продукт соответствует техническим требованиям и стандартам качества.',
+                'modal.results': '*Достигнутые результаты:',
+                'modal.stack': '*Стек технологий:',
+                'modal.like': 'НРАВИТСЯ',
+                'modal.view': 'СМОТРЕТЬ ПРОЕКТ',
+                'modal.p2.tags': 'Стратегия · UI/UX дизайн · Арт-дирекшн · Веб-разработка',
+                'modal.p2.desc1': 'Разработка комплексного дизайн-решения для высокоэффективного, профессионального и запоминающегося сайта-портфолио, которое максимизирует шансы достижения профессиональных целей: привлечения целевых клиентов, получения работы или повышения узнаваемости личного бренда.',
+                'modal.p2.results': 'Дизайн воспринимается как профессиональный, соответствующий современным трендам и отражающий личный бренд, адаптивный дизайн, уникальные анимации, интерактивные элементы. Положительный пользовательский опыт (UX): более 80% тестовых пользователей легко находят информацию.',
+                'modal.p2.stack': 'Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Адаптивный дизайн',
+                'modal.p3.desc1': 'Разработка комплексного дизайн-решения для ресторана, направленного на улучшение пользовательского опыта (UX), конверсии продаж и узнаваемости бренда. Проект включал все этапы — от исследования рынка до создания финальных UI-макетов и прототипов.',
+                'modal.p3.results': 'Полностью адаптивный дизайн, оптимизированный процесс оформления заказа, система фильтрации товаров, функционал списка желаний и интегрированные отзывы клиентов. Рост конверсии на 40%, снижение отказов на 25% и значительное увеличение средней стоимости заказа в первые 3 месяца после запуска.',
+                'modal.p3.stack': 'HTML5 · CSS3 · JavaScript · SCSS · Bootstrap · Адаптивный дизайн',
+                'contact.subtitle': 'Контакты',
+                'contact.title': 'Свяжитесь со мной',
+                'contact.role': 'Веб-разработчик',
+                'contact.desc': 'Независимо от того, есть ли у вас вопрос, вы хотите начать проект или просто хотите связаться. Не стесняйтесь отправить мне сообщение через контактную форму.',
+                'contact.skill1': 'Веб-дизайн Full stack',
+                'contact.skill2': 'Поддержка 24/7',
+                'contact.skill3': 'Неограниченные правки',
+                'form.name': 'Имя',
+                'form.email': 'Email',
+                'form.text': 'Текст',
+                'form.honeypot': 'Поле для ботов (не заполняйте):',
+                'form.send': 'ОТПРАВИТЬ СООБЩЕНИЕ',
+                'footer.rights': '© 2026.Все права защищены'
+            }
+        };
+
+        let currentLang = localStorage.getItem('site_lang') || 'en';
+
+        function applyLanguage(lang) {
+            if (!translations[lang]) return;
+            currentLang = lang;
+            localStorage.setItem('site_lang', lang);
+
+            // Update html lang attribute
+            document.documentElement.setAttribute('lang', lang);
+
+            // Update all elements with data-i18n
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key] !== undefined) {
+                    // Preserve child icons (like <i> tags inside links)
+                    const icon = el.querySelector('i');
+                    if (icon) {
+                        // Keep only the icon, replace text
+                        const newTranslation = translations[lang][key];
+                        // Remove text nodes but keep the icon
+                        Array.from(el.childNodes).forEach(node => {
+                            if (node.nodeType === Node.TEXT_NODE) {
+                                node.textContent = '';
+                            }
+                        });
+                        el.insertBefore(document.createTextNode(newTranslation), icon);
+                    } else {
+                        el.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update active state of language buttons
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            // Update document title
+            const titles = {
+                en: 'Yuri Dev || Creating digital experiences',
+                lv: 'Yuri Dev || Digitālo pieredžu veidošana',
+                ru: 'Yuri Dev || Создание цифрового опыта'
+            };
+            document.title = titles[lang] || titles.en;
+        }
+
+        // Initialize on DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Bind click events to all language buttons
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    applyLanguage(lang);
+                });
+            });
+
+            // Apply saved language
+            applyLanguage(currentLang);
+        });
+    })();
+    </script>
+
 	<script>
 		// Dynamic greeting based on time
         const hour = new Date().getHours();
