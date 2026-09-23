@@ -866,6 +866,22 @@
             </div>
         </div>
         <!-- End Modal Portfolio area -->
+
+	  <!-- Privacy Policy Modal -->
+        <div class="privacy-modal-overlay" id="privacyModalOverlay">
+            <div class="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
+                <div class="privacy-modal-header">
+                    <h3 id="privacyModalTitle"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="privacy.title">Privacy Policy</span></h3>
+                    <button class="privacy-modal-close" id="privacyModalClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="privacy-modal-body" id="privacyModalBody" data-i18n-html="privacy.content">
+                    <!-- Content injected by JS -->
+                </div>
+                <div class="privacy-modal-footer">
+                    <span class="updated-date" data-i18n="privacy.updated">Last updated: September 23, 2026</span>
+                </div>
+            </div>
+        </div>
 	
         <!-- Back to  top Start -->
         <div class="backto-top">
@@ -936,8 +952,9 @@
 		<!-- Consent checkbox for data processing -->
 	 <div class="consent-wrapper" id="consentWrapper">
 	 <input type="checkbox" id="consentCheckbox" name="consent" required>
-	 <label for="consentCheckbox" data-i18n="form.consent"> I agree to the processing of my personal data in accordance with the <span>privacy policy</span></label>
+	 <label for="consentCheckbox" data-i18n="form.consent"> I agree to the processing of my personal data in accordance with the privacy policy</label>
 	 </div>
+	 <a href="#" class="privacy-link" id="openPrivacyModal"><i class="fa-solid fa-file-shield"></i><span data-i18n="form.read_privacy">Read the full Privacy Policy</span></a>
 	 <div class="consent-error-msg" id="consentError" data-i18n="form.consent_error">Please confirm your consent to data processing</div>
 	 <!-- Submit Button -->
     <button name="submit" type="submit" id="submit" class="rn-btn">
@@ -1206,7 +1223,323 @@
             }
         });
     </script>
+		<!-- Privacy Policy Modal Script -->
+    <script>
+    (function() {
+        'use strict';
 
+        const privacyContents = {
+            en: `
+                <h4>1. Introduction</h4>
+                <p>Welcome to the personal website of Yuri Dev ("we", "our", "us"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our contact form, in compliance with the General Data Protection Regulation (GDPR) (EU) 2016/679 and applicable European data protection laws.</p>
+
+                <h4>2. Data Controller</h4>
+                <p>The data controller responsible for your personal data is:</p>
+                <p><strong>Yuri Dev</strong><br>
+                Contact: via the contact form on this website<br>
+                Location: European Union</p>
+
+                <h4>3. Personal Data We Collect</h4>
+                <p>We may collect the following personal data through the contact form:</p>
+                <ul>
+                    <li><strong>Name</strong> — provided voluntarily by you</li>
+                    <li><strong>Email address</strong> — provided voluntarily by you</li>
+                    <li><strong>Message content</strong> — any information you include in your message</li>
+                    <li><strong>Technical data</strong> — IP address, browser type, date and time of the request (for security and anti-spam purposes)</li>
+                </ul>
+
+                <h4>4. Purpose of Processing</h4>
+                <p>Your personal data is processed for the following purposes:</p>
+                <ul>
+                    <li>To respond to your inquiries sent through the contact form</li>
+                    <li>To provide information about services upon request</li>
+                    <li>To ensure website security and prevent spam or abuse</li>
+                    <li>To comply with legal obligations</li>
+                </ul>
+
+                <h4>5. Legal Basis for Processing</h4>
+                <p>We process your personal data based on:</p>
+                <ul>
+                    <li><strong>Consent</strong> (Article 6(1)(a) GDPR) — you give explicit consent by checking the consent box before submitting the form</li>
+                    <li><strong>Legitimate interests</strong> (Article 6(1)(f) GDPR) — to protect the website from spam and abuse</li>
+                </ul>
+
+                <h4>6. Data Recipients</h4>
+                <p>Your data may be transmitted to the following recipients:</p>
+                <ul>
+                    <li><strong>Web3Forms</strong> — a form submission service (processor), which may store data on servers located in the EU/EEA</li>
+                    <li><strong>Email service providers</strong> — for delivering responses to your inquiries</li>
+                </ul>
+                <p>We do not sell, trade, or otherwise transfer your personal data to third parties for marketing purposes.</p>
+
+                <h4>7. Data Retention Period</h4>
+                <p>Your personal data is retained only for as long as necessary to fulfil the purposes for which it was collected:</p>
+                <ul>
+                    <li>Contact form messages: up to <strong>12 months</strong> from the date of the last communication</li>
+                    <li>Technical logs (IP addresses): up to <strong>3 months</strong> for security purposes</li>
+                </ul>
+                <p>After this period, data is securely deleted or anonymized.</p>
+
+                <h4>8. Your Rights (GDPR)</h4>
+                <p>Under the GDPR, you have the following rights regarding your personal data:</p>
+                <ul>
+                    <li><strong>Right of access</strong> (Article 15) — obtain a copy of your personal data</li>
+                    <li><strong>Right to rectification</strong> (Article 16) — correct inaccurate or incomplete data</li>
+                    <li><strong>Right to erasure</strong> ("right to be forgotten") (Article 17) — request deletion of your data</li>
+                    <li><strong>Right to restriction of processing</strong> (Article 18)</li>
+                    <li><strong>Right to data portability</strong> (Article 20) — receive your data in a structured, machine-readable format</li>
+                    <li><strong>Right to object</strong> (Article 21) — object to processing based on legitimate interests</li>
+                    <li><strong>Right to withdraw consent</strong> (Article 7(3)) — at any time, without affecting the lawfulness of prior processing</li>
+                </ul>
+                <p>To exercise your rights, please contact us via the contact form with the subject "GDPR Request".</p>
+
+                <h4>9. Supervisory Authority</h4>
+                <p>If you believe that the processing of your personal data violates the GDPR, you have the right to lodge a complaint with a supervisory authority, in particular in the Member State of your residence, place of work, or place of the alleged infringement.</p>
+
+                <h4>10. Cookies</h4>
+                <p>Our website uses only essential technical cookies necessary for the functioning of the site. We do not use tracking, advertising, or analytics cookies without your explicit consent.</p>
+
+                <h4>11. International Data Transfers</h4>
+                <p>If your data is transferred outside the EEA, we ensure appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) approved by the European Commission.</p>
+
+                <h4>12. Security</h4>
+                <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+
+                <h4>13. Children's Privacy</h4>
+                <p>Our website is not directed to children under the age of 16. We do not knowingly collect personal data from children.</p>
+
+                <h4>14. Changes to This Policy</h4>
+                <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.</p>
+
+                <h4>15. Contact</h4>
+                <p>For any questions regarding this Privacy Policy or your personal data, please contact us via the contact form on this website.</p>
+            `,
+            lv: `
+                <h4>1. Ievads</h4>
+                <p>Laipni lūgti Yuri Dev personīgajā mājaslapā ("mēs", "mūsu"). Šī Privātuma politika izskaidro, kā mēs apkopojam, izmantojam, izpaužam un aizsargājam jūsu informāciju, kad apmeklējat mūsu mājaslapu un izmantojat mūsu kontaktformu, saskaņā ar Vispārīgo datu aizsardzības regulu (VDAR) (ES) 2016/679 un piemērojamiem Eiropas datu aizsardzības tiesību aktiem.</p>
+
+                <h4>2. Pārzinis</h4>
+                <p>Pārzinis, kas atbild par jūsu personas datiem, ir:</p>
+                <p><strong>Yuri Dev</strong><br>
+                Kontakti: izmantojot kontaktformu šajā mājaslapā<br>
+                Atrašanās vieta: Eiropas Savienība</p>
+
+                <h4>3. Apkopotie personas dati</h4>
+                <p>Mēs varam apkopot šādus personas datus, izmantojot kontaktformu:</p>
+                <ul>
+                    <li><strong>Vārds</strong> — jūsu brīvprātīgi sniegts</li>
+                    <li><strong>E-pasta adrese</strong> — jūsu brīvprātīgi sniegta</li>
+                    <li><strong>Ziņojuma saturs</strong> — jebkura informācija, ko iekļaujat savā ziņojumā</li>
+                    <li><strong>Tehniskie dati</strong> — IP adrese, pārlūkprogrammas veids, pieprasījuma datums un laiks (drošības un pretspama nolūkos)</li>
+                </ul>
+
+                <h4>4. Apstrādes mērķi</h4>
+                <p>Jūsu personas dati tiek apstrādāti šādiem mērķiem:</p>
+                <ul>
+                    <li>Lai atbildētu uz jūsu pieprasījumiem, kas nosūtīti caur kontaktformu</li>
+                    <li>Lai sniegtu informāciju par pakalpojumiem pēc pieprasījuma</li>
+                    <li>Lai nodrošinātu mājaslapas drošību un novērstu spamu vai ļaunprātīgu izmantošanu</li>
+                    <li>Lai izpildītu juridiskās saistības</li>
+                </ul>
+
+                <h4>5. Apstrādes juridiskais pamats</h4>
+                <p>Mēs apstrādājam jūsu personas datus, pamatojoties uz:</p>
+                <ul>
+                    <li><strong>Piekrišanu</strong> (VDAR 6. panta 1. punkta a) apakšpunkts) — jūs sniedzat skaidru piekrišanu, atzīmējot piekrišanas izvēles rūtiņu pirms formas iesniegšanas</li>
+                    <li><strong>Leģitimām interesēm</strong> (VDAR 6. panta 1. punkta f) apakšpunkts) — lai aizsargātu mājaslapu no spama un ļaunprātīgas izmantošanas</li>
+                </ul>
+
+                <h4>6. Datu saņēmēji</h4>
+                <p>Jūsu dati var tikt nosūtīti šādiem saņēmējiem:</p>
+                <ul>
+                    <li><strong>Web3Forms</strong> — formas iesniegšanas pakalpojums (apstrādātājs), kas var glabāt datus serveros, kas atrodas ES/EEZ</li>
+                    <li><strong>E-pasta pakalpojumu sniedzēji</strong> — lai piegādātu atbildes uz jūsu pieprasījumiem</li>
+                </ul>
+                <p>Mēs nepārdodam, nemainām vai citādi nenododam jūsu personas datus trešajām personām mārketinga nolūkos.</p>
+
+                <h4>7. Datu glabāšanas termiņš</h4>
+                <p>Jūsu personas dati tiek glabāti tikai tik ilgi, cik nepieciešams, lai sasniegtu mērķus, kuriem tie tika apkopoti:</p>
+                <ul>
+                    <li>Kontaktformas ziņojumi: līdz <strong>12 mēnešiem</strong> no pēdējās saziņas datuma</li>
+                    <li>Tehniskie žurnāli (IP adreses): līdz <strong>3 mēnešiem</strong> drošības nolūkos</li>
+                </ul>
+                <p>Pēc šī perioda dati tiek droši dzēsti vai anonimizēti.</p>
+
+                <h4>8. Jūsu tiesības (VDAR)</h4>
+                <p>Saskaņā ar VDAR jums ir šādas tiesības attiecībā uz jūsu personas datiem:</p>
+                <ul>
+                    <li><strong>Tiesības piekļūt</strong> (15. pants) — saņemt savu personas datu kopiju</li>
+                    <li><strong>Tiesības uz labošanu</strong> (16. pants) — labot neprecīzus vai nepilnīgus datus</li>
+                    <li><strong>Tiesības uz dzēšanu</strong> ("tiesības tikt aizmirstam") (17. pants) — pieprasīt savu datu dzēšanu</li>
+                    <li><strong>Tiesības uz apstrādes ierobežošanu</strong> (18. pants)</li>
+                    <li><strong>Tiesības uz datu pārnesamību</strong> (20. pants) — saņemt savus datus strukturētā, mašīnlasāmā formātā</li>
+                    <li><strong>Tiesības iebilst</strong> (21. pants) — iebilst pret apstrādi, kas balstīta uz leģitimām interesēm</li>
+                    <li><strong>Tiesības atsaukt piekrišanu</strong> (7. panta 3. punkts) — jebkurā laikā, neietekmējot iepriekšējās apstrādes likumīgumu</li>
+                </ul>
+                <p>Lai izmantotu savas tiesības, lūdzu, sazinieties ar mums, izmantojot kontaktformu ar tematu "VDAR pieprasījums".</p>
+
+                <h4>9. Uzraudzības iestāde</h4>
+                <p>Ja uzskatāt, ka jūsu personas datu apstrāde pārkāpj VDAR, jums ir tiesības iesniegt sūdzību uzraudzības iestādei, jo īpaši dalībvalstī, kurā ir jūsu pastāvīgā dzīvesvieta, darba vieta vai pārkāpuma vieta. Latvijā — Datu valsts inspekcija.</p>
+
+                <h4>10. Sīkdatnes</h4>
+                <p>Mūsu mājaslapa izmanto tikai būtiskās tehniskās sīkdatnes, kas nepieciešamas vietnes darbībai. Mēs neizmantojam izsekošanas, reklāmas vai analītikas sīkdatnes bez jūsu skaidras piekrišanas.</p>
+
+                <h4>11. Starptautiskā datu pārsūtīšana</h4>
+                <p>Ja jūsu dati tiek pārsūtīti ārpus EEZ, mēs nodrošinām atbilstošus aizsardzības pasākumus, piemēram, Eiropas Komisijas apstiprinātus standarta līguma noteikumus (SCC).</p>
+
+                <h4>12. Drošība</h4>
+                <p>Mēs ieviešam atbilstošus tehniskos un organizatoriskos pasākumus, lai aizsargātu jūsu personas datus pret neatļautu piekļuvi, izmaiņām, izpaušanu vai iznīcināšanu.</p>
+
+                <h4>13. Bērnu privātums</h4>
+                <p>Mūsu mājaslapa nav paredzēta bērniem, kas jaunāki par 16 gadiem. Mēs apzināti neapkopojam personas datus no bērniem.</p>
+
+                <h4>14. Izmaiņas šajā politikā</h4>
+                <p>Mēs varam laiku pa laikam atjaunināt šo Privātuma politiku. Visas izmaiņas tiks publicētas šajā lapā ar atjauninātu pārskatīšanas datumu. Mēs aicinām jūs periodiski pārskatīt šo politiku.</p>
+
+                <h4>15. Kontakti</h4>
+                <p>Par jebkuriem jautājumiem saistībā ar šo Privātuma politiku vai jūsu personas datiem, lūdzu, sazinieties ar mums, izmantojot kontaktformu šajā mājaslapā.</p>
+            `,
+            ru: `
+                <h4>1. Введение</h4>
+                <p>Добро пожаловать на персональный сайт Yuri Dev ("мы", "наш"). Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы посещаете наш сайт и используете контактную форму, в соответствии с Общим регламентом по защите данных (GDPR) (ЕС) 2016/679 и применимыми европейскими законами о защите данных.</p>
+
+                <h4>2. Контролёр данных</h4>
+                <p>Контролёром данных, ответственным за ваши персональные данные, является:</p>
+                <p><strong>Yuri Dev</strong><br>
+                Контакт: через контактную форму на данном сайте<br>
+                Местонахождение: Европейский Союз</p>
+
+                <h4>3. Собираемые персональные данные</h4>
+                <p>Мы можем собирать следующие персональные данные через контактную форму:</p>
+                <ul>
+                    <li><strong>Имя</strong> — предоставляется вами добровольно</li>
+                    <li><strong>Адрес электронной почты</strong> — предоставляется вами добровольно</li>
+                    <li><strong>Содержание сообщения</strong> — любая информация, которую вы включаете в своё сообщение</li>
+                    <li><strong>Технические данные</strong> — IP-адрес, тип браузера, дата и время запроса (в целях безопасности и защиты от спама)</li>
+                </ul>
+
+                <h4>4. Цели обработки</h4>
+                <p>Ваши персональные данные обрабатываются для следующих целей:</p>
+                <ul>
+                    <li>Для ответа на ваши запросы, отправленные через контактную форму</li>
+                    <li>Для предоставления информации об услугах по запросу</li>
+                    <li>Для обеспечения безопасности сайта и предотвращения спама или злоупотреблений</li>
+                    <li>Для соблюдения юридических обязательств</li>
+                </ul>
+
+                <h4>5. Правовая основа обработки</h4>
+                <p>Мы обрабатываем ваши персональные данные на основании:</p>
+                <ul>
+                    <li><strong>Согласия</strong> (статья 6(1)(a) GDPR) — вы даёте явное согласие, установив флажок согласия перед отправкой формы</li>
+                    <li><strong>Законных интересов</strong> (статья 6(1)(f) GDPR) — для защиты сайта от спама и злоупотреблений</li>
+                </ul>
+
+                <h4>6. Получатели данных</h4>
+                <p>Ваши данные могут передаваться следующим получателям:</p>
+                <ul>
+                    <li><strong>Web3Forms</strong> — сервис отправки форм (обработчик), который может хранить данные на серверах, расположенных в ЕС/ЕЭЗ</li>
+                    <li><strong>Провайдеры почтовых сервисов</strong> — для доставки ответов на ваши запросы</li>
+                </ul>
+                <p>Мы не продаём, не обмениваем и иным образом не передаём ваши персональные данные третьим лицам в маркетинговых целях.</p>
+
+                <h4>7. Срок хранения данных</h4>
+                <p>Ваши персональные данные хранятся только столько времени, сколько необходимо для достижения целей, для которых они были собраны:</p>
+                <ul>
+                    <li>Сообщения контактной формы: до <strong>12 месяцев</strong> с даты последнего общения</li>
+                    <li>Технические журналы (IP-адреса): до <strong>3 месяцев</strong> в целях безопасности</li>
+                </ul>
+                <p>По истечении этого срока данные безопасно удаляются или анонимизируются.</p>
+
+                <h4>8. Ваши права (GDPR)</h4>
+                <p>В соответствии с GDPR вы обладаете следующими правами в отношении ваших персональных данных:</p>
+                <ul>
+                    <li><strong>Право на доступ</strong> (статья 15) — получить копию ваших персональных данных</li>
+                    <li><strong>Право на исправление</strong> (статья 16) — исправить неточные или неполные данные</li>
+                    <li><strong>Право на удаление</strong> ("право на забвение") (статья 17) — запросить удаление ваших данных</li>
+                    <li><strong>Право на ограничение обработки</strong> (статья 18)</li>
+                    <li><strong>Право на переносимость данных</strong> (статья 20) — получить ваши данные в структурированном, машиночитаемом формате</li>
+                    <li><strong>Право на возражение</strong> (статья 21) — возражать против обработки, основанной на законных интересах</li>
+                    <li><strong>Право отозвать согласие</strong> (статья 7(3)) — в любое время, не затрагивая законность предшествующей обработки</li>
+                </ul>
+                <p>Для реализации ваших прав, пожалуйста, свяжитесь с нами через контактную форму с темой "GDPR-запрос".</p>
+
+                <h4>9. Надзорный орган</h4>
+                <p>Если вы считаете, что обработка ваших персональных данных нарушает GDPR, вы имеете право подать жалобу в надзорный орган, в частности в государстве-члене вашего места жительства, места работы или места предполагаемого нарушения.</p>
+
+                <h4>10. Cookies</h4>
+                <p>Наш сайт использует только необходимые технические cookies, необходимые для функционирования сайта. Мы не используем cookies для отслеживания, рекламы или аналитики без вашего явного согласия.</p>
+
+                <h4>11. Международная передача данных</h4>
+                <p>Если ваши данные передаются за пределы ЕЭЗ, мы обеспечиваем наличие соответствующих гарантий, таких как Стандартные договорные положения (SCC), одобренные Европейской Комиссией.</p>
+
+                <h4>12. Безопасность</h4>
+                <p>Мы внедряем соответствующие технические и организационные меры для защиты ваших персональных данных от несанкционированного доступа, изменения, раскрытия или уничтожения.</p>
+
+                <h4>13. Конфиденциальность детей</h4>
+                <p>Наш сайт не предназначен для детей младше 16 лет. Мы сознательно не собираем персональные данные детей.</p>
+
+                <h4>14. Изменения в настоящей Политике</h4>
+                <p>Мы можем время от времени обновлять настоящую Политику конфиденциальности. Любые изменения будут опубликованы на этой странице с обновлённой датой редакции. Мы рекомендуем вам периодически пересматривать настоящую политику.</p>
+
+                <h4>15. Контакты</h4>
+                <p>По любым вопросам, касающимся настоящей Политики конфиденциальности или ваших персональных данных, пожалуйста, свяжитесь с нами через контактную форму на данном сайте.</p>
+            `
+        };
+
+        const overlay = document.getElementById('privacyModalOverlay');
+        const closeBtn = document.getElementById('privacyModalClose');
+        const openLink = document.getElementById('openPrivacyModal');
+        const bodyEl = document.getElementById('privacyModalBody');
+
+        function openPrivacyModal() {
+            if (!overlay || !bodyEl) return;
+            const lang = localStorage.getItem('site_lang') || 'en';
+            const content = privacyContents[lang] || privacyContents.en;
+            bodyEl.innerHTML = content;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePrivacyModal() {
+            if (!overlay) return;
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (openLink) {
+            openLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                openPrivacyModal();
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closePrivacyModal);
+        }
+
+        if (overlay) {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closePrivacyModal();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && overlay && overlay.classList.contains('active')) {
+                closePrivacyModal();
+            }
+        });
+
+        // Expose for language switcher to refresh content when modal is open
+        window.refreshPrivacyModalContent = function() {
+            if (overlay && overlay.classList.contains('active') && bodyEl) {
+                const lang = localStorage.getItem('site_lang') || 'en';
+                bodyEl.innerHTML = privacyContents[lang] || privacyContents.en;
+            }
+        };
+    })();
+    </script>
     <!-- Language Switcher Script -->
     <script>
     (function() {
