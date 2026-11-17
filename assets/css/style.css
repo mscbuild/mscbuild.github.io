@@ -11255,9 +11255,16 @@ body.template-color-1 {
   }
 }
 .header-wrapper .header-left {
-  flex-basis: 20%;
-  justify-content: flex-start;
-  display: flex;
+    flex-basis: 50%;
+    display: block;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .header-wrapper .header-left {
+        padding-left: 15px;
+    }
 }
 .header-wrapper .header-center {
   flex-basis: 100%;
